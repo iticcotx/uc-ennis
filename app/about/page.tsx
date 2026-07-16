@@ -19,23 +19,23 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <AutoVideo
           className="absolute inset-0 h-full w-full object-cover"
-          src={media.clinicCoupleVideo.mp4}
-          poster={media.clinicCoupleVideo.poster}
+          src={media.teamVideo.mp4}
+          poster={media.teamVideo.poster}
         />
         <div
           aria-hidden="true"
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(100deg, rgba(16,31,56,0.97) 0%, rgba(16,31,56,0.9) 55%, rgba(16,31,56,0.7) 100%)",
+              "linear-gradient(105deg, rgba(16,31,56,0.97) 0%, rgba(16,31,56,0.9) 55%, rgba(16,31,56,0.7) 100%)",
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-36 lg:px-8 lg:pt-44">
+        <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-32 lg:px-8 lg:pt-40">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
               About Us
             </p>
-            <h1 className="font-display mt-5 max-w-2xl text-4xl font-medium tracking-tight sm:text-5xl">
+            <h1 className="font-display mt-4 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
               Ennis deserves great care, close to home.
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 href={site.sister.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-navy-800 underline decoration-red/40 underline-offset-2 hover:text-red"
+                className="font-bold text-navy-800 underline decoration-red/40 underline-offset-2 hover:text-red"
               >
                 Urgent Care of Plano
               </a>
@@ -85,18 +85,18 @@ export default function AboutPage() {
 
         {/* Promise cards */}
         <Reveal>
-          <h2 className="font-display mt-16 text-2xl font-semibold text-navy-900">
+          <h2 className="font-display mt-16 text-2xl font-black text-navy-900">
             Our promises to you
           </h2>
         </Reveal>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {promises.map((v, i) => (
             <Reveal key={v.title} delay={i * 60}>
-              <div className="h-full rounded-2xl border border-navy-900/10 bg-white/70 p-6">
-                <span className="font-display text-4xl font-semibold text-navy-100">
+              <div className="h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-6 transition-colors hover:border-red/40">
+                <span className="font-display text-4xl font-black text-navy-100">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display mt-3 text-lg font-semibold text-navy-900">
+                <h3 className="font-display mt-3 text-lg font-bold text-navy-900">
                   {v.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.text}</p>
@@ -111,10 +111,10 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
                 Our Standard of Care
               </p>
-              <h2 className="font-display mt-4 text-3xl font-medium tracking-tight sm:text-4xl">
+              <h2 className="font-display mt-3 text-3xl font-black tracking-tight sm:text-4xl">
                 Treated like family, every visit.
               </h2>
               <p className="mt-6 leading-relaxed text-ivory/75">
@@ -124,18 +124,18 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/services"
-                className="mt-8 inline-block rounded-full bg-red px-7 py-3.5 text-sm font-semibold text-ivory transition-all hover:bg-red-deep"
+                className="mt-8 inline-block rounded-xl bg-red px-7 py-3.5 text-sm font-bold text-ivory transition-all hover:bg-red-deep"
               >
                 See Everything We Treat
               </Link>
             </Reveal>
             <Reveal delay={150}>
-              <div className="overflow-hidden rounded-3xl border border-ivory/10 shadow-2xl">
+              <div className="overflow-hidden rounded-2xl border border-ivory/10 shadow-2xl">
                 <AutoVideo
                   className="h-full w-full object-cover"
-                  src={media.doctorTalkVideo.mp4}
-                  poster={media.doctorTalkVideo.poster}
-                  label="A provider talking warmly with a patient"
+                  src={media.doctorPatientVideo.mp4}
+                  poster={media.doctorPatientVideo.poster}
+                  label="A doctor talking warmly with a smiling patient"
                 />
               </div>
             </Reveal>
@@ -146,7 +146,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-5 py-24 text-center lg:px-8">
         <Reveal>
-          <h2 className="font-display text-3xl font-medium tracking-tight text-navy-900 sm:text-4xl">
+          <h2 className="font-display text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
             Come see us — no appointment needed.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-soft">
@@ -155,7 +155,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               href={site.phoneHref}
-              className="rounded-full bg-red px-8 py-4 text-sm font-semibold text-ivory shadow-lg transition-all hover:bg-red-deep"
+              className="rounded-xl bg-red px-8 py-4 text-sm font-bold text-ivory shadow-lg transition-all hover:bg-red-deep"
             >
               Call {site.phone}
             </a>
@@ -163,7 +163,7 @@ export default function AboutPage() {
               href={site.address.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-navy-900/20 px-8 py-4 text-sm font-semibold text-navy-900 transition-colors hover:border-red hover:text-red"
+              className="rounded-xl border-2 border-navy-900/20 px-8 py-4 text-sm font-bold text-navy-900 transition-colors hover:border-red hover:text-red"
             >
               Get Directions
             </a>

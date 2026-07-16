@@ -29,23 +29,26 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-navy-900/10">
+    <div className="grid gap-4 md:grid-cols-2">
       {faqs.map((f) => (
-        <details key={f.q} className="faq group py-2">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-left [&::-webkit-details-marker]:hidden">
-            <span className="font-display text-lg font-semibold text-navy-900">
+        <details
+          key={f.q}
+          className="group rounded-2xl border-2 border-navy-900/10 bg-white/80 px-6 transition-colors open:border-red/50"
+        >
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left [&::-webkit-details-marker]:hidden">
+            <span className="font-display text-base font-bold text-navy-900">
               {f.q}
             </span>
             <span
               aria-hidden="true"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-navy-900/15 text-navy-800 transition-transform duration-300 group-open:rotate-45 group-open:bg-red group-open:text-ivory"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-2 border-navy-900/15 text-navy-800 transition-transform duration-300 group-open:rotate-45 group-open:border-red group-open:bg-red group-open:text-ivory"
             >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
               </svg>
             </span>
           </summary>
-          <p className="pb-6 pr-12 text-sm leading-relaxed text-ink-soft">{f.a}</p>
+          <p className="pb-6 text-sm leading-relaxed text-ink-soft">{f.a}</p>
         </details>
       ))}
     </div>
