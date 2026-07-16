@@ -17,8 +17,8 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <AutoVideo
           className="absolute inset-0 h-full w-full object-cover"
-          src={media.nurseCheckVideo.mp4}
-          poster={media.nurseCheckVideo.poster}
+          src={media.contactHeaderVideo.mp4}
+          poster={media.contactHeaderVideo.poster}
         />
         <div
           aria-hidden="true"

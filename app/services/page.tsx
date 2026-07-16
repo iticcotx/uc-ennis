@@ -18,8 +18,8 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <AutoVideo
           className="absolute inset-0 h-full w-full object-cover"
-          src={media.doctorPatientVideo.mp4}
-          poster={media.doctorPatientVideo.poster}
+          src={media.servicesHeaderVideo.mp4}
+          poster={media.servicesHeaderVideo.poster}
         />
         <div
           aria-hidden="true"
@@ -58,8 +58,8 @@ export default function ServicesPage() {
               <div className="relative mx-auto h-115 w-full max-w-sm overflow-hidden rounded-2xl border-2 border-navy-900/10 bg-navy-950 shadow-xl">
                 <AutoVideo
                   className="absolute inset-0 h-full w-full object-cover"
-                  src={media.pediatricVideo.mp4}
-                  poster={media.pediatricVideo.poster}
+                  src={media.pediatricSectionVideo.mp4}
+                  poster={media.pediatricSectionVideo.poster}
                   label="A mother caring for her sick child"
                 />
               </div>
@@ -138,8 +138,8 @@ export default function ServicesPage() {
               <div className="mx-auto h-96 w-full max-w-sm overflow-hidden rounded-2xl border border-ivory/10 shadow-2xl">
                 <AutoVideo
                   className="h-full w-full object-cover"
-                  src={media.labVideo.mp4}
-                  poster={media.labVideo.poster}
+                  src={media.employersVideo.mp4}
+                  poster={media.employersVideo.poster}
                   label="Blood sample tubes being processed in a laboratory analyzer"
                 />
               </div>

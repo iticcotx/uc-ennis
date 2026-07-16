@@ -19,8 +19,8 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <AutoVideo
           className="absolute inset-0 h-full w-full object-cover"
-          src={media.teamVideo.mp4}
-          poster={media.teamVideo.poster}
+          src={media.aboutHeaderVideo.mp4}
+          poster={media.aboutHeaderVideo.poster}
         />
         <div
           aria-hidden="true"
@@ -101,8 +101,8 @@ export default function AboutPage() {
               <div className="overflow-hidden rounded-2xl border border-ivory/10 shadow-2xl">
                 <AutoVideo
                   className="h-full w-full object-cover"
-                  src={media.doctorPatientVideo.mp4}
-                  poster={media.doctorPatientVideo.poster}
+                  src={media.aboutBandVideo.mp4}
+                  poster={media.aboutBandVideo.poster}
                   label="A doctor talking warmly with a smiling patient"
                 />
               </div>

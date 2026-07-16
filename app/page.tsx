@@ -332,8 +332,8 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-2xl bg-navy-950">
               <AutoVideo
                 className="absolute inset-0 h-full w-full object-cover"
-                src={media.nurseCheckVideo.mp4}
-                poster={media.nurseCheckVideo.poster}
+                src={media.ctaVideo.mp4}
+                poster={media.ctaVideo.poster}
               />
               <div className="absolute inset-0 bg-navy-950/85" />
               <div className="relative px-8 py-16 text-center text-ivory sm:px-16">
