@@ -37,16 +37,6 @@ export default function Footer() {
               <li><Link href="/services" className="transition-colors hover:text-sky">Services</Link></li>
               <li><Link href="/about" className="transition-colors hover:text-sky">About Us</Link></li>
               <li><Link href="/contact" className="transition-colors hover:text-sky">Contact &amp; Directions</Link></li>
-              <li>
-                <a
-                  href={site.sister.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-sky"
-                >
-                  {site.sister.name}
-                </a>
-              </li>
             </ul>
           </div>
 

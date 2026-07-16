@@ -9,7 +9,7 @@ import { media } from "@/lib/media";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Urgent Care of Ennis is the newest clinic from the team behind Urgent Care of Plano — bringing fast, professional, walk-in medical care to Ennis and Ellis County, TX.",
+    "Urgent Care of Ennis brings fast, professional, walk-in medical care to Ennis and Ellis County, TX — on-site X-ray and lab, six days a week.",
 };
 
 export default function AboutPage() {
@@ -36,60 +36,28 @@ export default function AboutPage() {
               About Us
             </p>
             <h1 className="font-display mt-4 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
-              Ennis deserves great care, close to home.
+              Great care, close to home.
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
-              We&apos;re the team behind Urgent Care of Plano — now proudly
-              serving Ennis and Ellis County.
+              Fast, professional medical care for Ennis and Ellis County —
+              without the long waits, and without the ER bill. Because your
+              health matters.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="mx-auto max-w-4xl px-5 py-20 lg:px-8">
+      {/* Promise cards */}
+      <section className="mx-auto max-w-6xl px-5 py-20 lg:px-8">
         <Reveal>
-          <div className="space-y-6 text-[1.05rem] leading-relaxed text-ink-soft">
-            <p>
-              For too many families in Ellis County, getting medical care has
-              meant a choice between waiting days for an appointment or hours
-              in an emergency room — often with an ER bill at the end of it.
-              We believe there&apos;s a better way.
-            </p>
-            <p>
-              Urgent Care of Ennis carries the standard set by{" "}
-              <a
-                href={site.sister.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold text-navy-800 underline decoration-red/40 underline-offset-2 hover:text-red"
-              >
-                Urgent Care of Plano
-              </a>
-              , where the promise is simple:{" "}
-              <strong className="text-navy-900">
-                fast, professional medical care without the long waits
-              </strong>
-              . Walk in six days a week and find experienced providers, on-site
-              digital X-ray and laboratory, and treatment for the whole family
-              — from stitches and sprains to flu, physicals, and workplace
-              injuries.
-            </p>
-            <p>
-              We&apos;re proud to join the Ennis community and honored to care
-              for it. Because here, just like at every clinic in our family —{" "}
-              <strong className="text-navy-900">your health matters</strong>.
-            </p>
-          </div>
-        </Reveal>
-
-        {/* Promise cards */}
-        <Reveal>
-          <h2 className="font-display mt-16 text-2xl font-black text-navy-900">
-            Our promises to you
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+            Our Promises
+          </p>
+          <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+            What you can count on.
           </h2>
         </Reveal>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {promises.map((v, i) => (
             <Reveal key={v.title} delay={i * 60}>
               <div className="h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-6 transition-colors hover:border-red/40">
@@ -118,9 +86,9 @@ export default function AboutPage() {
                 Treated like family, every visit.
               </h2>
               <p className="mt-6 leading-relaxed text-ivory/75">
-                Our providers take the time to listen, explain, and treat you
-                right the first time — the same patient-first approach that
-                earned our Plano clinic its reputation.
+                Our providers listen, explain, and treat you right the first
+                time — for every member of the family, from toddlers to
+                grandparents.
               </p>
               <Link
                 href="/services"

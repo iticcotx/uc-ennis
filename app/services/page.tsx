@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
-import ServiceTabs from "@/components/ServiceTabs";
-import Ticker from "@/components/Ticker";
+import SymptomExplorer from "@/components/SymptomExplorer";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
 
@@ -46,21 +45,31 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Ticker />
-
-      {/* Category tabs */}
-      <section className="bg-ivory-soft py-24">
-        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+      {/* Interactive symptom explorer */}
+      <section className="relative overflow-hidden bg-navy-950 py-24 text-ivory">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(50rem 26rem at 85% 0%, rgba(157,180,216,0.14), transparent 60%), radial-gradient(40rem 22rem at 0% 100%, rgba(179,40,45,0.16), transparent 55%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
-              Browse By Category
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
+              Start Here
             </p>
-            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-              Pick what brought you in.
+            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight sm:text-4xl">
+              What brings you in today?
             </h2>
+            <p className="mt-4 max-w-xl text-ivory/70">
+              Tap what&apos;s bothering you and see exactly how we&apos;ll take
+              care of it.
+            </p>
           </Reveal>
           <div className="mt-10">
-            <ServiceTabs />
+            <SymptomExplorer />
           </div>
         </div>
       </section>

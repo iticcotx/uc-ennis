@@ -28,6 +28,7 @@ export const media = {
   physicalsVideo: video("8413524", "8413524-hd_1920_1080_25fps", "abdomen-adult-aid-blood-8413524.jpeg"), // vaccine being administered
 
   // Section videos
+  nurseCareVideo: video("30141924", "12925508_1920_1080_30fps", adventist("30141924"), 1920), // nurse caring for patient
   teamVideo: video("30141965", "12925604_1920_1080_24fps", adventist("30141965"), 1920), // medical team in hallway
   doctorPatientVideo: video("30141938", "12925561_1920_1080_24fps", adventist("30141938"), 1920), // doctor with patient
   pediatricVideo: video("8375667", "8375667-hd_720_1366_25fps", "pexels-photo-8375667.jpeg", 720), // mom with sick child (vertical)

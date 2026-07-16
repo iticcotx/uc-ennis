@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Texas red / navy / ivory — matched to the Urgent Care of Plano logo */
+  /* Texas red / navy / ivory — matched to the brand logo */
   --ivory: #faf9f6;
   --ivory-soft: #f1efe9;
   --navy-950: #101f38;
@@ -92,29 +92,6 @@ body {
 .red-rule {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--red) 30%, var(--red) 70%, transparent);
-}
-
-/* Scrolling condition ticker */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 36s linear infinite;
-}
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
 }
 
 /* Pulsing live-status dot */

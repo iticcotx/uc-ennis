@@ -12,8 +12,4 @@ export const site = {
   },
   hours: "Monday – Saturday · 7:00 AM – 7:00 PM",
   hoursShort: ["Monday – Saturday", "7:00 AM – 7:00 PM"],
-  sister: {
-    name: "Urgent Care of Plano",
-    url: "https://www.urgentcareplano.com/",
-  },
 };

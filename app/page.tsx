@@ -2,8 +2,7 @@ import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
 import HeroMontage from "@/components/HeroMontage";
 import StatusCard from "@/components/StatusCard";
-import Ticker from "@/components/Ticker";
-import ServiceTabs from "@/components/ServiceTabs";
+import SymptomExplorer from "@/components/SymptomExplorer";
 import Faq from "@/components/Faq";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
@@ -83,8 +82,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Scrolling conditions ticker ──────────────────────── */}
-      <Ticker />
+      {/* ── Trust strip ──────────────────────────────────────── */}
+      <section className="border-y-2 border-navy-950 bg-red">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 divide-ivory/20 px-5 py-4 text-ivory sm:grid-cols-4 sm:divide-x lg:px-8">
+          {[
+            ["✚", "Walk-ins welcome"],
+            ["✚", "On-site X-ray & lab"],
+            ["✚", "Most insurance accepted"],
+            ["✚", "Little-to-no wait"],
+          ].map(([mark, label]) => (
+            <p key={label} className="flex items-center justify-center gap-2 px-2 py-1 text-center text-xs font-bold uppercase tracking-wide sm:text-sm">
+              <span aria-hidden="true" className="text-ivory/60">{mark}</span>
+              {label}
+            </p>
+          ))}
+        </div>
+      </section>
 
       {/* ── How it works ─────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
@@ -117,46 +130,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Services: interactive category tabs ──────────────── */}
-      <section className="bg-ivory-soft py-24">
-        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+      {/* ── Services: interactive symptom explorer ───────────── */}
+      <section className="relative overflow-hidden bg-navy-950 py-24 text-ivory">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(50rem 26rem at 85% 0%, rgba(157,180,216,0.14), transparent 60%), radial-gradient(40rem 22rem at 0% 100%, rgba(179,40,45,0.16), transparent 55%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
               Our Services
             </p>
-            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-              Pick what brought you in.
+            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight sm:text-4xl">
+              What brings you in today?
             </h2>
+            <p className="mt-4 max-w-xl text-ivory/70">
+              Tap what&apos;s bothering you and see exactly how we&apos;ll take
+              care of it.
+            </p>
           </Reveal>
           <div className="mt-10">
-            <ServiceTabs />
+            <SymptomExplorer />
           </div>
         </div>
       </section>
 
       {/* ── Why us ───────────────────────────────────────────── */}
-      <section className="grain relative overflow-hidden bg-navy-950 py-24 text-ivory">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/brand/monogram.webp"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-20 -top-20 h-105 w-105 select-none opacity-6"
-        />
+      <section className="py-24">
         <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
                 Why Urgent Care of Ennis
               </p>
-              <h2 className="font-display mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-                The team behind Urgent Care of Plano — now in Ennis.
+              <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+                Built for Ennis. Ready every day.
               </h2>
-              <p className="mt-6 leading-relaxed text-ivory/75">
-                Our Plano clinic earned its reputation on a simple promise:
-                fast, professional medical care without the long waits. We
-                brought that same standard — and the same patient-first team
-                culture — to Ellis County.
+              <p className="mt-6 leading-relaxed text-ink-soft">
+                One simple promise: fast, professional medical care without
+                the long waits — delivered by a patient-first team, six days
+                a week, right here in Ellis County.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
@@ -165,9 +182,9 @@ export default function Home() {
                   ["Fair pricing", "fraction of ER cost"],
                   ["Family care", "toddlers to grandparents"],
                 ].map(([title, text]) => (
-                  <div key={title} className="rounded-xl border border-ivory/15 bg-ivory/5 p-4">
-                    <p className="font-display font-bold text-sky">{title}</p>
-                    <p className="mt-1 text-xs text-ivory/70">{text}</p>
+                  <div key={title} className="rounded-xl border-2 border-navy-900/10 bg-white/70 p-4 transition-colors hover:border-red/40">
+                    <p className="font-display font-bold text-navy-900">{title}</p>
+                    <p className="mt-1 text-xs text-ink-soft">{text}</p>
                   </div>
                 ))}
               </div>
