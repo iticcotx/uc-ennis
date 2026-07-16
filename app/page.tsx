@@ -130,24 +130,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Services: zoomable card grid ─────────────────────── */}
-      <section className="bg-ivory-soft py-24">
-        <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
-              Our Services
-            </p>
-            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-              What brings you in today?
-            </h2>
-            <p className="mt-4 max-w-xl text-ink-soft">
-              Tap a card to see exactly how we&apos;ll take care of it.
-            </p>
-          </Reveal>
-          <div className="mt-10">
-            <ServiceGrid />
-          </div>
-        </div>
+      {/* ── Services: pinned flip deck with zoom popups ──────── */}
+      <section>
+        <ServiceGrid />
       </section>
 
       {/* ── Why us ───────────────────────────────────────────── */}
