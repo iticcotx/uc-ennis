@@ -231,14 +231,14 @@ export default function Home() {
                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">
                       New office visit
                     </p>
-                    <p className="font-display mt-1 text-4xl font-black">$100</p>
+                    <p className="font-display mt-1 text-4xl font-black">$150</p>
                     <p className="mt-1 text-xs text-ivory/60">Full evaluation & treatment</p>
                   </div>
                   <div className="rounded-xl border border-ivory/15 bg-ivory/5 p-5">
                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">
                       Follow-up visit
                     </p>
-                    <p className="font-display mt-1 text-4xl font-black">$50</p>
+                    <p className="font-display mt-1 text-4xl font-black">$80</p>
                     <p className="mt-1 text-xs text-ivory/60">Follow-up & ongoing care</p>
                   </div>
                 </div>
