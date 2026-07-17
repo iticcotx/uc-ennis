@@ -38,6 +38,7 @@ export default function StatusCard() {
           We&apos;re Ready
         </span>
         <span
+          aria-live="polite"
           className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide ${
             open ? "bg-green-500/15 text-green-400" : "bg-red/20 text-ivory/80"
           }`}

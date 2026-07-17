@@ -65,30 +65,32 @@ export default function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className={`text-sm font-semibold tracking-wide transition-colors ${
-                dark
-                  ? pathname === l.href
-                    ? "text-navy-800"
-                    : "text-ink-soft hover:text-navy-800"
-                  : pathname === l.href
-                    ? "text-sky"
-                    : "text-ivory hover:text-sky"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const current = pathname === l.href;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={current ? "page" : undefined}
+                className={`relative text-sm font-semibold tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-red after:transition-opacity ${
+                  current ? "after:opacity-100" : "after:opacity-0"
+                } ${
+                  dark
+                    ? current
+                      ? "text-navy-800"
+                      : "text-ink-soft hover:text-navy-800"
+                    : current
+                      ? "text-sky"
+                      : "text-ivory hover:text-sky"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
           <a
             href={site.phoneHref}
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md ${
-              dark
-                ? "bg-red text-ivory hover:bg-red-deep"
-                : "bg-red text-ivory hover:bg-red-deep"
-            }`}
+            className="rounded-xl bg-red px-5 py-2.5 text-sm font-semibold text-ivory shadow-sm transition-all hover:bg-red-deep hover:shadow-md"
           >
             Call {site.phone}
           </a>
@@ -132,7 +134,7 @@ export default function Nav() {
           <div className="mt-3 flex flex-col gap-3">
             <a
               href={site.phoneHref}
-              className="rounded-full bg-red px-5 py-3 text-center text-sm font-semibold text-ivory"
+              className="rounded-xl bg-red px-5 py-3 text-center text-sm font-semibold text-ivory"
             >
               Call {site.phone}
             </a>
@@ -140,7 +142,7 @@ export default function Nav() {
               href={site.address.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-navy-900/20 px-5 py-3 text-center text-sm font-semibold text-navy-900"
+              className="rounded-xl border-2 border-navy-900/20 px-5 py-3 text-center text-sm font-semibold text-navy-900"
             >
               Get Directions
             </a>

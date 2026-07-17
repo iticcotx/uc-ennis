@@ -123,6 +123,11 @@ export default function ServiceGrid() {
   const panelRef = useRef<HTMLDivElement>(null);
   const originRef = useRef<DOMRect | null>(null);
   const flipTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const reduceMotion = useRef(false);
+
+  useEffect(() => {
+    reduceMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }, []);
 
   // Scroll → which page should be visible (section is pinned meanwhile)
   useEffect(() => {
@@ -148,6 +153,11 @@ export default function ServiceGrid() {
   // Flip the deck when the target page changes
   useEffect(() => {
     if (page === shown) return;
+    if (reduceMotion.current) {
+      setShown(page);
+      setHidden(false);
+      return;
+    }
     setHidden(true);
     if (flipTimer.current) clearTimeout(flipTimer.current);
     flipTimer.current = setTimeout(() => {
@@ -171,6 +181,15 @@ export default function ServiceGrid() {
     const panel = panelRef.current;
     const origin = originRef.current;
     if (!active || !panel || !origin) return;
+    if (reduceMotion.current) {
+      panel.style.transform = "none";
+      panel.style.opacity = "1";
+      if (closing) {
+        setActive(null);
+        setClosing(false);
+      }
+      return;
+    }
     const target = panel.getBoundingClientRect();
     const dx = origin.left + origin.width / 2 - (target.left + target.width / 2);
     const dy = origin.top + origin.height / 2 - (target.top + target.height / 2);

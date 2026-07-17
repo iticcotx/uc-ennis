@@ -56,6 +56,19 @@ body {
   color: var(--navy-900);
 }
 
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Tactile press feedback on all buttons and button-like links */
+button:active,
+a[class*="rounded-"]:active {
+  transform: scale(0.98);
+}
+
 /* Reveal-on-scroll */
 .reveal {
   opacity: 0;
