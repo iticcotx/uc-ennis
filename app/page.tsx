@@ -4,7 +4,6 @@ import HeroMontage from "@/components/HeroMontage";
 import StatusCard from "@/components/StatusCard";
 import CoverflowCarousel from "@/components/CoverflowCarousel";
 import VideoCoverflow from "@/components/VideoCoverflow";
-import ServiceGrid from "@/components/ServiceGrid";
 import Faq from "@/components/Faq";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
@@ -123,9 +122,6 @@ export default function Home() {
           />
         </div>
       </section>
-
-      {/* ── Services: cross (+) collage with zoom popups ─────── */}
-      <ServiceGrid />
 
       {/* ── Why us (video coverflow carousel) ────────────────── */}
       <section className="py-24">

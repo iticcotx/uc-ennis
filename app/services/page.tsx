@@ -48,59 +48,6 @@ export default function ServicesPage() {
       {/* Services: cross (+) collage with zoom popups */}
       <ServiceGrid />
 
-      {/* Pediatric & family highlight */}
-      <section className="py-24">
-        <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal>
-              <div className="relative mx-auto h-115 w-full max-w-sm overflow-hidden rounded-2xl border-2 border-navy-900/10 bg-navy-950 shadow-xl">
-                <AutoVideo
-                  className="absolute inset-0 h-full w-full object-cover"
-                  src={media.pediatricSectionVideo.mp4}
-                  poster={media.pediatricSectionVideo.poster}
-                  label="A mother caring for her sick child"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
-                Pediatric & Family Care
-              </p>
-              <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-                When your kiddo spikes a fever before closing.
-              </h2>
-              <p className="mt-6 leading-relaxed text-ink-soft">
-                No pediatric appointment for days? We see children of all ages
-                for illness, injuries, school physicals, and vaccinations —
-                with gentle providers and convenient weekday hours, five days a
-                week.
-              </p>
-              <ul className="mt-6 grid gap-3">
-                {[
-                  "Pediatric illness & injury care",
-                  "School & sports physicals",
-                  "Vaccinations & immunizations",
-                  "Women's health services",
-                ].map((d) => (
-                  <li key={d} className="flex items-start gap-2.5 text-sm font-medium text-ink">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" className="mt-0.5 shrink-0 text-red">
-                      <path d="M3.5 9.5l3.5 3.5L14.5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    {d}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={site.phoneHref}
-                className="mt-8 inline-block rounded-xl bg-navy-900 px-6 py-3 text-sm font-bold text-ivory transition-all hover:bg-navy-800"
-              >
-                Call {site.phone}
-              </a>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
 
       {/* Note */}
       <section className="mx-auto max-w-6xl px-5 py-20 text-center lg:px-8">
