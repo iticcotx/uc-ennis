@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
+import CoverflowCarousel from "@/components/CoverflowCarousel";
 import { promises } from "@/lib/content";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
@@ -47,30 +48,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Promise cards */}
+      {/* Promise cards (auto coverflow carousel) */}
       <section className="mx-auto max-w-6xl px-5 py-20 lg:px-8">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
-            Our Promises
-          </p>
-          <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-            What you can count on.
-          </h2>
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              Our Promises
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              What you can count on.
+            </h2>
+          </div>
         </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {promises.map((v, i) => (
-            <Reveal key={v.title} delay={i * 60}>
-              <div className="h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-6 transition-colors hover:border-red/40">
-                <span className="font-display text-4xl font-black text-navy-100">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display mt-3 text-lg font-bold text-navy-900">
-                  {v.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.text}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-12">
+          <CoverflowCarousel items={promises} />
         </div>
       </section>
 

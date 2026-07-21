@@ -2,7 +2,7 @@ import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
 import HeroMontage from "@/components/HeroMontage";
 import StatusCard from "@/components/StatusCard";
-import Carousel from "@/components/Carousel";
+import CoverflowCarousel from "@/components/CoverflowCarousel";
 import ServiceGrid from "@/components/ServiceGrid";
 import Faq from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -100,44 +100,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Auto-advancing highlights carousel ───────────────── */}
-      <Carousel />
-
-      {/* ── How it works ─────────────────────────────────────── */}
+      {/* ── How it works (auto coverflow carousel) ───────────── */}
       <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
-            How It Works
-          </p>
-          <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-            Three steps to feeling better.
-          </h2>
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              How It Works
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              Three steps to feeling better.
+            </h2>
+          </div>
         </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            ["Walk in or call", "Come in any time we're open — no appointment needed. Call ahead if you'd like us to expect you."],
-            ["Get seen fast", "A provider evaluates you quickly, with on-site X-ray and lab for same-visit answers."],
-            ["Leave feeling better", "Treatment, prescriptions, and a clear care plan — all in one visit."],
-          ].map(([title, text], i) => (
-            <Reveal key={title} delay={i * 120}>
-              <div className="relative h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-8 transition-colors hover:border-red/40">
-                <span className="font-display absolute -top-6 left-6 flex h-12 w-12 items-center justify-center rounded-xl bg-red text-xl font-black text-ivory shadow-lg">
-                  {i + 1}
-                </span>
-                <h3 className="font-display mt-4 text-xl font-bold text-navy-900">
-                  {title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{text}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-12">
+          <CoverflowCarousel
+            items={[
+              { title: "Walk in or call", text: "Come in any weekday — no appointment needed. Call ahead if you'd like us to expect you." },
+              { title: "Get seen fast", text: "A provider evaluates you quickly, with on-site X-ray and lab for same-visit answers." },
+              { title: "Leave feeling better", text: "Treatment, prescriptions, and a clear care plan — all in one visit." },
+            ]}
+          />
         </div>
       </section>
 
-      {/* ── Services: pinned flip deck with zoom popups ──────── */}
-      <section>
-        <ServiceGrid />
-      </section>
+      {/* ── Services: cross (+) collage with zoom popups ─────── */}
+      <ServiceGrid />
 
       {/* ── Why us ───────────────────────────────────────────── */}
       <section className="py-24">

@@ -45,10 +45,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Pinned flip deck with zoom popups */}
-      <section>
-        <ServiceGrid />
-      </section>
+      {/* Services: cross (+) collage with zoom popups */}
+      <ServiceGrid />
 
       {/* Pediatric & family highlight */}
       <section className="py-24">
@@ -69,7 +67,7 @@ export default function ServicesPage() {
                 Pediatric & Family Care
               </p>
               <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-                When your kiddo spikes a fever at 6 PM.
+                When your kiddo spikes a fever before closing.
               </h2>
               <p className="mt-6 leading-relaxed text-ink-soft">
                 No pediatric appointment for days? We see children of all ages

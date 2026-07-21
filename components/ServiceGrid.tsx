@@ -27,147 +27,116 @@ const svc = (
   alt: string
 ): Service => ({ key, label, tagline, headline, plan, caps, video, alt });
 
-// 3 pages × 8 cards. Scrolling through the pinned section flips the deck
-// page by page until every service has been shown.
-const PAGES: Service[][] = [
-  [
-    svc("fever", "Fever or flu", "Rapid tests, fast relief", "Fever, flu & feeling awful",
-      ["Rapid flu, strep & COVID tests with results in minutes", "Provider exam and same-visit treatment plan", "Medications prescribed before you walk out"],
-      ["Rapid tests", "On-site lab", "All ages"], media.svcFever, "A mother checking her sick son's temperature"),
-    svc("throat", "Cough or sore throat", "Strep testing on site", "Cough, cold & sore throat",
-      ["Strep and respiratory testing on site", "Ear, nose & throat exam by an experienced provider", "Relief plan — from prescriptions to home-care guidance"],
-      ["Strep testing", "Respiratory care", "Same-day"], media.svcThroat, "A nurse checking on a patient"),
-    svc("cut", "Cut or wound", "Stitches without the ER", "Cuts, wounds & burns",
-      ["Wound cleaning and numbing for comfort", "Stitches, skin glue, or dressing — whatever heals best", "Tetanus updates and follow-up care included"],
-      ["Stitches on site", "Burn care", "Tetanus shots"], media.svcCut, "A clinician bandaging an injured hand"),
-    svc("sprain", "Sprain or fracture", "X-ray answers today", "Sprains, strains & fractures",
-      ["Digital X-ray on site — know if it's broken today", "Splinting and injury care in the same visit", "Referral coordination if you need a specialist"],
-      ["Digital X-ray", "Splinting", "Sports injuries"], media.svcSprain, "A nurse providing attentive care to a patient"),
-    svc("stomach", "Stomach trouble", "Labs & IV fluids on site", "Stomach pain, nausea & more",
-      ["On-site lab work to find the cause fast", "IV fluids for dehydration when you need them", "Treatment and prescriptions the same visit"],
-      ["On-site lab", "IV fluids", "Same-day"], media.svcStomach, "A doctor talking with a patient at the bedside"),
-    svc("rash", "Rash or allergy", "Bites, breakouts & reactions", "Rashes, allergies & bites",
-      ["Skin exam to identify the reaction", "Allergic reaction treatment, including bug & animal bites", "Care plan to calm it down and keep it down"],
-      ["Allergy care", "Bite treatment", "Kid-friendly"], media.svcRash, "A mother caring for her child at home"),
-    svc("physical", "Need a physical", "School, sports & work forms", "Physicals & vaccines",
-      ["School, sports & annual physicals — walk in, walk out", "Vaccinations and immunization records handled", "Forms signed and ready the same day"],
-      ["School forms", "Sports physicals", "Vaccines"], media.svcPhysical, "A clinician preparing a vaccination"),
-    svc("work", "Work injury", "Workers' comp handled", "Work injuries & workers' comp",
-      ["Injury care with proper workers' comp documentation", "Drug & alcohol screening and pre-employment physicals", "Return-to-work evaluations your employer can trust"],
-      ["Workers' comp", "Drug screening", "Employer accounts"], media.svcWork, "Lab samples being processed for screening"),
-  ],
-  [
-    svc("ear", "Ear or sinus infection", "Pressure, pain & congestion", "Ear & sinus infections",
-      ["Ear and sinus exam to pinpoint the infection", "Treatment to relieve pressure and pain fast", "Antibiotics prescribed when they're truly needed"],
-      ["All ages", "Same-day", "ENT exam"], media.svcEar, "A nurse examining a patient"),
-    svc("uti", "UTI or bladder", "Discreet, same-day testing", "UTIs & bladder infections",
-      ["On-site urine testing with fast results", "Provider consult — discreet and judgment-free", "Prescription sent before you leave"],
-      ["On-site lab", "Women's health", "Fast results"], media.svcUti, "A doctor consulting with a patient"),
-    svc("pinkeye", "Pink eye", "Contagious? Find out now", "Pink eye & eye irritation",
-      ["Eye exam to tell infection from allergy", "Drops or ointment prescribed on the spot", "School and work return guidance included"],
-      ["Kid-friendly", "Same-day", "School notes"], media.svcPinkeye, "A parent comforting a child"),
-    svc("asthma", "Asthma or breathing", "Breathe easier today", "Asthma & breathing trouble",
-      ["Breathing assessment and oxygen check", "Nebulizer treatment on site when needed", "Inhaler prescriptions and action plan"],
-      ["Nebulizer", "Respiratory care", "All ages"], media.svcAsthma, "A parent caring for a sick child"),
-    svc("burn", "Minor burns", "Cool it, treat it, heal it", "Minor burn care",
-      ["Burn assessment and professional cleaning", "Dressing to protect and speed healing", "Follow-up plan and scar prevention guidance"],
-      ["Burn care", "Wound dressing", "Follow-up"], media.svcBurn, "A clinician dressing a wound"),
-    svc("bite", "Bug or animal bite", "From itchy to serious", "Bug bites & minor animal bites",
-      ["Wound cleaning and infection check", "Tetanus and treatment as needed", "Clear signs-to-watch-for instructions"],
-      ["Bite care", "Tetanus shots", "Infection check"], media.svcBite, "A nurse tending to a patient"),
-    svc("covid", "COVID-19 testing", "Know in minutes", "COVID-19 testing & care",
-      ["Rapid COVID testing with same-visit results", "Symptom treatment and recovery guidance", "Work and school documentation provided"],
-      ["Rapid tests", "Same-day", "Documentation"], media.svcCovid, "Test samples being processed in a lab"),
-    svc("iv", "Dehydration & IV fluids", "Rehydrate & recover", "Dehydration & IV fluids",
-      ["Assessment for dehydration and its cause", "IV fluids administered on site", "Recovery plan so it doesn't come back"],
-      ["IV therapy", "On-site", "All ages"], media.svcIv, "A clinician preparing IV treatment"),
-  ],
-  [
-    svc("xray", "X-ray imaging", "Digital, on site, today", "Digital X-ray imaging",
-      ["Digital X-ray taken during your visit", "Images read quickly — answers before you leave", "Copies available for specialists if needed"],
-      ["On-site imaging", "Fast reads", "No referral"], media.svcXray, "A lab professional reviewing samples"),
-    svc("lab", "Lab & rapid tests", "Results in minutes", "On-site lab & rapid testing",
-      ["Blood, urine, and swab testing under one roof", "Rapid flu, strep & COVID results in minutes", "Results explained face to face"],
-      ["Full lab", "Rapid tests", "Same-visit"], media.svcLab, "Test tubes in a laboratory analyzer"),
-    svc("vaccine", "Vaccinations", "For school, work & travel", "Vaccines & immunizations",
-      ["Routine and required immunizations on site", "Records updated and copies provided", "Kid-friendly, quick appointments"],
-      ["All ages", "Records", "Walk-in"], media.svcVaccine, "A clinician administering a vaccine"),
-    svc("school", "School & sports physicals", "Forms done same day", "School & sports physicals",
-      ["Complete physical exam by our providers", "Forms signed the same visit", "Quick turnaround for teams and schools"],
-      ["Same-day forms", "Sports clearance", "Walk-in"], media.svcSchool, "A parent with their child"),
-    svc("womens", "Women's health", "Care built around you", "Women's health services",
-      ["Discreet, respectful care for women's health needs", "UTI and infection testing on site", "Referrals coordinated when specialty care helps"],
-      ["Discreet care", "On-site lab", "Same-day"], media.svcWomens, "A doctor talking with a patient"),
-    svc("peds", "Pediatric care", "Gentle care for little ones", "Pediatric urgent care",
-      ["Kid-first providers for illness and injuries", "Gentle exams with parents in the room", "School notes and follow-up guidance"],
-      ["All ages", "Kid-friendly", "Mon–Fri"], media.svcPeds, "A mother caring for her child"),
-    svc("screen", "Drug screening", "For employers & employees", "Drug & alcohol screening",
-      ["DOT and non-DOT screening on site", "Chain-of-custody handled properly", "Fast, documented results for employers"],
-      ["Employer accounts", "Chain of custody", "Fast results"], media.svcScreen, "Samples processed in a laboratory"),
-    svc("employer", "Employer services", "Your workforce partner", "Occupational medicine",
-      ["Pre-employment physicals and screening programs", "Work injury care with proper documentation", "Return-to-work evaluations you can trust"],
-      ["Workers' comp", "Physicals", "Partnerships"], media.svcEmployer, "A medical team in a hospital hallway"),
-  ],
+// 24 services, laid out as a medical-cross (+) collage of video tiles.
+const SERVICES: Service[] = [
+  svc("fever", "Fever or flu", "Rapid tests, fast relief", "Fever, flu & feeling awful",
+    ["Rapid flu, strep & COVID tests with results in minutes", "Provider exam and same-visit treatment plan", "Medications prescribed before you walk out"],
+    ["Rapid tests", "On-site lab", "All ages"], media.svcFever, "A mother checking her sick son's temperature"),
+  svc("throat", "Cough or sore throat", "Strep testing on site", "Cough, cold & sore throat",
+    ["Strep and respiratory testing on site", "Ear, nose & throat exam by an experienced provider", "Relief plan — from prescriptions to home-care guidance"],
+    ["Strep testing", "Respiratory care", "Same-day"], media.svcThroat, "A nurse checking on a patient"),
+  svc("cut", "Cut or wound", "Stitches without the ER", "Cuts, wounds & burns",
+    ["Wound cleaning and numbing for comfort", "Stitches, skin glue, or dressing — whatever heals best", "Tetanus updates and follow-up care included"],
+    ["Stitches on site", "Burn care", "Tetanus shots"], media.svcCut, "A clinician bandaging an injured hand"),
+  svc("sprain", "Sprain or fracture", "X-ray answers today", "Sprains, strains & fractures",
+    ["Digital X-ray on site — know if it's broken today", "Splinting and injury care in the same visit", "Referral coordination if you need a specialist"],
+    ["Digital X-ray", "Splinting", "Sports injuries"], media.svcSprain, "A nurse providing attentive care to a patient"),
+  svc("stomach", "Stomach trouble", "Labs & IV fluids on site", "Stomach pain, nausea & more",
+    ["On-site lab work to find the cause fast", "IV fluids for dehydration when you need them", "Treatment and prescriptions the same visit"],
+    ["On-site lab", "IV fluids", "Same-day"], media.svcStomach, "A doctor talking with a patient at the bedside"),
+  svc("rash", "Rash or allergy", "Bites, breakouts & reactions", "Rashes, allergies & bites",
+    ["Skin exam to identify the reaction", "Allergic reaction treatment, including bug & animal bites", "Care plan to calm it down and keep it down"],
+    ["Allergy care", "Bite treatment", "Kid-friendly"], media.svcRash, "A mother caring for her child at home"),
+  svc("physical", "Need a physical", "School, sports & work forms", "Physicals & vaccines",
+    ["School, sports & annual physicals — walk in, walk out", "Vaccinations and immunization records handled", "Forms signed and ready the same day"],
+    ["School forms", "Sports physicals", "Vaccines"], media.svcPhysical, "A clinician preparing a vaccination"),
+  svc("work", "Work injury", "Workers' comp handled", "Work injuries & workers' comp",
+    ["Injury care with proper workers' comp documentation", "Drug & alcohol screening and pre-employment physicals", "Return-to-work evaluations your employer can trust"],
+    ["Workers' comp", "Drug screening", "Documentation"], media.svcWork, "Lab samples being processed for screening"),
+  svc("ear", "Ear or sinus infection", "Pressure, pain & congestion", "Ear & sinus infections",
+    ["Ear and sinus exam to pinpoint the infection", "Treatment to relieve pressure and pain fast", "Antibiotics prescribed when they're truly needed"],
+    ["All ages", "Same-day", "ENT exam"], media.svcEar, "A nurse examining a patient"),
+  svc("uti", "UTI or bladder", "Discreet, same-day testing", "UTIs & bladder infections",
+    ["On-site urine testing with fast results", "Provider consult — discreet and judgment-free", "Prescription sent before you leave"],
+    ["On-site lab", "Women's health", "Fast results"], media.svcUti, "A doctor consulting with a patient"),
+  svc("pinkeye", "Pink eye", "Contagious? Find out now", "Pink eye & eye irritation",
+    ["Eye exam to tell infection from allergy", "Drops or ointment prescribed on the spot", "School and work return guidance included"],
+    ["Kid-friendly", "Same-day", "School notes"], media.svcPinkeye, "A parent comforting a child"),
+  svc("asthma", "Asthma or breathing", "Breathe easier today", "Asthma & breathing trouble",
+    ["Breathing assessment and oxygen check", "Nebulizer treatment on site when needed", "Inhaler prescriptions and action plan"],
+    ["Nebulizer", "Respiratory care", "All ages"], media.svcAsthma, "A parent caring for a sick child"),
+  svc("burn", "Minor burns", "Cool it, treat it, heal it", "Minor burn care",
+    ["Burn assessment and professional cleaning", "Dressing to protect and speed healing", "Follow-up plan and scar prevention guidance"],
+    ["Burn care", "Wound dressing", "Follow-up"], media.svcBurn, "A clinician dressing a wound"),
+  svc("bite", "Bug or animal bite", "From itchy to serious", "Bug bites & minor animal bites",
+    ["Wound cleaning and infection check", "Tetanus and treatment as needed", "Clear signs-to-watch-for instructions"],
+    ["Bite care", "Tetanus shots", "Infection check"], media.svcBite, "A nurse tending to a patient"),
+  svc("covid", "COVID-19 testing", "Know in minutes", "COVID-19 testing & care",
+    ["Rapid COVID testing with same-visit results", "Symptom treatment and recovery guidance", "Work and school documentation provided"],
+    ["Rapid tests", "Same-day", "Documentation"], media.svcCovid, "Test samples being processed in a lab"),
+  svc("iv", "Dehydration & IV fluids", "Rehydrate & recover", "Dehydration & IV fluids",
+    ["Assessment for dehydration and its cause", "IV fluids administered on site", "Recovery plan so it doesn't come back"],
+    ["IV therapy", "On-site", "All ages"], media.svcIv, "A clinician preparing IV treatment"),
+  svc("xray", "X-ray imaging", "Digital, on site, today", "Digital X-ray imaging",
+    ["Digital X-ray taken during your visit", "Images read quickly — answers before you leave", "Copies available for specialists if needed"],
+    ["On-site imaging", "Fast reads", "No referral"], media.svcXray, "A lab professional reviewing samples"),
+  svc("lab", "Lab & rapid tests", "Results in minutes", "On-site lab & rapid testing",
+    ["Blood, urine, and swab testing under one roof", "Rapid flu, strep & COVID results in minutes", "Results explained face to face"],
+    ["Full lab", "Rapid tests", "Same-visit"], media.svcLab, "Test tubes in a laboratory analyzer"),
+  svc("vaccine", "Vaccinations", "For school, work & travel", "Vaccines & immunizations",
+    ["Routine and required immunizations on site", "Records updated and copies provided", "Kid-friendly, quick appointments"],
+    ["All ages", "Records", "Walk-in"], media.svcVaccine, "A clinician administering a vaccine"),
+  svc("school", "School & sports physicals", "Forms done same day", "School & sports physicals",
+    ["Complete physical exam by our providers", "Forms signed the same visit", "Quick turnaround for teams and schools"],
+    ["Same-day forms", "Sports clearance", "Walk-in"], media.svcSchool, "A parent with their child"),
+  svc("womens", "Women's health", "Care built around you", "Women's health services",
+    ["Discreet, respectful care for women's health needs", "UTI and infection testing on site", "Referrals coordinated when specialty care helps"],
+    ["Discreet care", "On-site lab", "Same-day"], media.svcWomens, "A doctor talking with a patient"),
+  svc("peds", "Pediatric care", "Gentle care for little ones", "Pediatric urgent care",
+    ["Kid-first providers for illness and injuries", "Gentle exams with parents in the room", "School notes and follow-up guidance"],
+    ["All ages", "Kid-friendly", "Mon–Fri"], media.svcPeds, "A mother caring for her child"),
+  svc("screen", "Drug screening", "For employers & employees", "Drug & alcohol screening",
+    ["DOT and non-DOT screening on site", "Chain-of-custody handled properly", "Fast, documented results for employers"],
+    ["Employer accounts", "Chain of custody", "Fast results"], media.svcScreen, "Samples processed in a laboratory"),
+  svc("employer", "Employer services", "Your workforce partner", "Occupational medicine",
+    ["Pre-employment physicals and screening programs", "Work injury care with proper documentation", "Return-to-work evaluations you can trust"],
+    ["Workers' comp", "Physicals", "Partnerships"], media.svcEmployer, "A medical team in a hospital hallway"),
 ];
 
-const FLIP_MS = 260;
-const STAGGER_MS = 35;
+// Cross (+) mask over an 8-col × 6-row grid. '#' = a tile. 24 tiles total.
+const MASK = [
+  "...##...",
+  "...##...",
+  "########",
+  "########",
+  "...##...",
+  "...##...",
+];
+
+// Grid cells (1-based col/row) that form the cross, in reading order.
+const CELLS: { col: number; row: number }[] = [];
+MASK.forEach((rowStr, r) =>
+  rowStr.split("").forEach((ch, c) => {
+    if (ch === "#") CELLS.push({ col: c + 1, row: r + 1 });
+  })
+);
 
 export default function ServiceGrid() {
-  const [page, setPage] = useState(0); // target page from scroll
-  const [shown, setShown] = useState(0); // page currently rendered on cards
-  const [hidden, setHidden] = useState(false); // cards rotated away mid-flip
   const [active, setActive] = useState<Service | null>(null);
   const [closing, setClosing] = useState(false);
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
+  const [desktop, setDesktop] = useState(false);
   const originRef = useRef<DOMRect | null>(null);
-  const flipTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useRef(false);
 
   useEffect(() => {
     reduceMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
-
-  // Scroll → which page should be visible (section is pinned meanwhile)
-  useEffect(() => {
-    const onScroll = () => {
-      const wrap = wrapRef.current;
-      if (!wrap) return;
-      const rect = wrap.getBoundingClientRect();
-      const scrollable = rect.height - window.innerHeight;
-      if (scrollable <= 0) return;
-      const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-      const target = Math.min(PAGES.length - 1, Math.floor(progress * PAGES.length));
-      setPage(target);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
-
-  // Flip the deck when the target page changes
-  useEffect(() => {
-    if (page === shown) return;
-    if (reduceMotion.current) {
-      setShown(page);
-      setHidden(false);
-      return;
-    }
-    setHidden(true);
-    if (flipTimer.current) clearTimeout(flipTimer.current);
-    flipTimer.current = setTimeout(() => {
-      setShown(page);
-      setHidden(false);
-    }, FLIP_MS + STAGGER_MS * 7);
-    return () => {
-      if (flipTimer.current) clearTimeout(flipTimer.current);
-    };
-  }, [page, shown]);
 
   const open = (s: Service, e: React.MouseEvent<HTMLButtonElement>) => {
     originRef.current = e.currentTarget.getBoundingClientRect();
@@ -176,7 +145,6 @@ export default function ServiceGrid() {
   };
   const close = useCallback(() => setClosing(true), []);
 
-  // Zoom the popup out of the clicked card (FLIP-style), reverse on close
   useLayoutEffect(() => {
     const panel = panelRef.current;
     const origin = originRef.current;
@@ -193,7 +161,7 @@ export default function ServiceGrid() {
     const target = panel.getBoundingClientRect();
     const dx = origin.left + origin.width / 2 - (target.left + target.width / 2);
     const dy = origin.top + origin.height / 2 - (target.top + target.height / 2);
-    const scale = Math.max(0.2, Math.min(origin.width / target.width, 0.6));
+    const scale = Math.max(0.15, Math.min(origin.width / target.width, 0.6));
     if (!closing) {
       panel.style.transition = "none";
       panel.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`;
@@ -226,99 +194,75 @@ export default function ServiceGrid() {
     };
   }, [active, close]);
 
-  const cards = PAGES[shown];
-
   return (
-    <div ref={wrapRef} style={{ height: `${PAGES.length * 100}vh` }}>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden bg-ivory-soft">
-        <div className="mx-auto w-full max-w-6xl px-5 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
-                Our Services
-              </p>
-              <h2 className="font-display mt-2 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-                What brings you in today?
-              </h2>
-              <p className="mt-2 max-w-xl text-sm text-ink-soft sm:text-base">
-                Tap a card for details — keep scrolling to flip through everything we treat.
-              </p>
-            </div>
-            {/* Page dots */}
-            <div className="flex items-center gap-2 pb-1" aria-label={`Page ${shown + 1} of ${PAGES.length}`}>
-              {PAGES.map((_, i) => (
-                <span
-                  key={i}
-                  aria-hidden="true"
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === page ? "w-8 bg-red" : "w-2 bg-navy-900/20"
-                  }`}
-                />
-              ))}
-              <span className="ml-2 text-xs font-bold text-ink-soft">
-                {shown + 1}/{PAGES.length}
-              </span>
-            </div>
-          </div>
+    <section className="bg-ivory-soft py-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+            Our Services
+          </p>
+          <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+            What brings you in today?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+            Tap any tile in the cross to see exactly how we&apos;ll take care of it.
+          </p>
+        </div>
 
-          {/* Flipping deck */}
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4" style={{ perspective: "1400px" }}>
-            {cards.map((sv, i) => (
-              <div
-                key={`${shown}-${sv.key}`}
-                style={{
-                  transform: hidden ? "rotateY(90deg)" : "rotateY(0deg)",
-                  transition: `transform ${FLIP_MS}ms ease-in`,
-                  transitionDelay: `${(hidden ? i : 7 - i) * STAGGER_MS}ms`,
-                  transformStyle: "preserve-3d",
-                }}
+        {/* Cross (+) collage on desktop; simple grid on mobile */}
+        <div
+          className="mx-auto mt-12 grid max-w-3xl gap-2.5 sm:gap-3"
+          style={{
+            gridTemplateColumns: desktop ? "repeat(8, 1fr)" : "repeat(4, 1fr)",
+          }}
+        >
+          {SERVICES.map((s, i) => {
+            const cell = CELLS[i];
+            return (
+              <button
+                key={s.key}
+                type="button"
+                onClick={(e) => open(s, e)}
+                aria-haspopup="dialog"
+                style={
+                  desktop && cell
+                    ? { gridColumn: cell.col, gridRow: cell.row }
+                    : undefined
+                }
+                className="group relative aspect-square overflow-hidden rounded-xl border border-navy-900/10 bg-navy-950 text-left shadow-sm transition-all duration-300 hover:z-10 hover:scale-[1.04] hover:border-red/60 hover:shadow-xl"
               >
-                <button
-                  type="button"
-                  onClick={(e) => open(sv, e)}
-                  aria-haspopup="dialog"
-                  className="group relative block w-full overflow-hidden rounded-2xl border-2 border-navy-900/10 bg-navy-950 text-left shadow-md transition-[border-color,box-shadow] duration-300 hover:border-red/60 hover:shadow-2xl"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={s.video.poster}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-cover opacity-60 transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
+                />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/10" />
+                <div className="relative flex h-full flex-col justify-end p-3">
+                  <span className="font-display block text-[13px] font-black leading-tight text-ivory sm:text-sm">
+                    {s.label}
+                  </span>
+                  <span className="mt-0.5 hidden items-center gap-1 text-[10px] font-semibold text-sky group-hover:text-ivory sm:flex">
+                    {s.tagline}
+                  </span>
+                </div>
+                {/* corner + mark reinforcing the medical-cross theme */}
+                <span
+                  aria-hidden="true"
+                  className="absolute right-2 top-2 text-sky/70 transition-colors group-hover:text-red"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={sv.video.poster}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 h-full w-full object-cover opacity-60 transition-all duration-500 group-hover:scale-110 group-hover:opacity-75"
-                  />
-                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-950/15" />
-                  <div className="relative flex h-32 flex-col justify-end p-4 sm:h-44 sm:p-5">
-                    <span className="font-display block text-sm font-black leading-tight text-ivory sm:text-lg">
-                      {sv.label}
-                    </span>
-                    <span className="mt-1 flex items-center gap-1.5 text-[11px] font-semibold text-sky transition-colors group-hover:text-ivory sm:text-xs">
-                      {sv.tagline}
-                      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* Scroll hint */}
-          <div
-            className={`mt-6 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-ink-soft transition-opacity duration-300 ${
-              page < PAGES.length - 1 ? "opacity-100" : "opacity-0"
-            }`}
-            aria-hidden={page >= PAGES.length - 1}
-          >
-            Keep scrolling for more
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="animate-bounce">
-              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M6 1.5v9M1.5 6h9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Zoom-in popup */}
+      {/* Zoom-in video popup */}
       {active && (
         <div
           className={`fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-8 ${closing ? "pointer-events-none" : ""}`}
@@ -391,6 +335,6 @@ export default function ServiceGrid() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
