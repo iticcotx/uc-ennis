@@ -60,7 +60,7 @@ export default function Home() {
             <Reveal delay={360}>
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["9a–5p", "Mon – Fri"],
+                  ["9 AM – 5 PM", "Mon – Fri"],
                   ["Fast", "little-to-no wait"],
                   ["X-Ray", "& lab on site"],
                   ["All ages", "kids to seniors"],
