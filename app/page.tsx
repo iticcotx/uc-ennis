@@ -3,6 +3,7 @@ import AutoVideo from "@/components/AutoVideo";
 import HeroMontage from "@/components/HeroMontage";
 import StatusCard from "@/components/StatusCard";
 import CoverflowCarousel from "@/components/CoverflowCarousel";
+import VideoCoverflow from "@/components/VideoCoverflow";
 import ServiceGrid from "@/components/ServiceGrid";
 import Faq from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -126,46 +127,32 @@ export default function Home() {
       {/* ── Services: cross (+) collage with zoom popups ─────── */}
       <ServiceGrid />
 
-      {/* ── Why us ───────────────────────────────────────────── */}
+      {/* ── Why us (video coverflow carousel) ────────────────── */}
       <section className="py-24">
-        <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="grid items-center gap-14 lg:grid-cols-2">
-            <Reveal>
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <div className="text-center">
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
                 Why Urgent Care of Ennis
               </p>
               <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
                 Built for Ennis. Ready every day.
               </h2>
-              <p className="mt-6 leading-relaxed text-ink-soft">
-                One simple promise: fast, professional medical care without
-                the long waits — delivered by a patient-first team, five days
-                a week, right here in Ellis County.
+              <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+                Fast, professional care without the long waits — five days a week,
+                right here in Ellis County.
               </p>
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  ["Board-certified", "expert providers"],
-                  ["One visit", "exam, imaging, lab & treatment"],
-                  ["Fair pricing", "fraction of ER cost"],
-                  ["Family care", "toddlers to grandparents"],
-                ].map(([title, text]) => (
-                  <div key={title} className="rounded-xl border-2 border-navy-900/10 bg-white/70 p-4 transition-colors hover:border-red/40">
-                    <p className="font-display font-bold text-navy-900">{title}</p>
-                    <p className="mt-1 text-xs text-ink-soft">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-            <Reveal delay={150}>
-              <div className="overflow-hidden rounded-2xl border border-ivory/10 shadow-2xl">
-                <AutoVideo
-                  className="h-full w-full object-cover"
-                  src={media.teamVideo.mp4}
-                  poster={media.teamVideo.poster}
-                  label="A medical care team standing together in a hospital hallway"
-                />
-              </div>
-            </Reveal>
+            </div>
+          </Reveal>
+          <div className="mt-12">
+            <VideoCoverflow
+              items={[
+                { title: "Board-certified providers", text: "Experienced clinicians who listen, diagnose, and treat you right the first time.", video: media.teamVideo, alt: "A medical care team in a hospital hallway" },
+                { title: "Everything in one visit", text: "Exam, on-site X-ray, lab, and treatment — no running across town for answers.", video: media.servicesHeaderVideo, alt: "A clinician working in the on-site lab" },
+                { title: "A fraction of ER cost", text: "Quality treatment for non-emergencies — $150 self-pay and most major insurance accepted.", video: media.aboutBandVideo, alt: "A provider consulting with a patient" },
+                { title: "Care for the whole family", text: "From toddlers to grandparents — gentle, walk-in care for every age.", video: media.pediatricSectionVideo, alt: "A parent and child at a visit" },
+              ]}
+            />
           </div>
         </div>
       </section>

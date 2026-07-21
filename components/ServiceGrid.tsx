@@ -218,7 +218,7 @@ export default function ServiceGrid() {
                     ? { gridColumn: cell.col, gridRow: cell.row }
                     : undefined
                 }
-                className="group relative aspect-square overflow-hidden rounded-2xl border border-navy-900/10 bg-navy-950 text-left shadow-md transition-all duration-300 hover:z-10 hover:scale-[1.05] hover:border-red/60 hover:shadow-2xl"
+                className="group relative aspect-square overflow-hidden rounded-2xl border border-navy-900/10 bg-navy-950 text-left shadow-[0_16px_34px_-12px_rgba(16,31,56,0.55)] transition-all duration-300 hover:z-10 hover:-translate-y-1.5 hover:scale-[1.04] hover:border-red/60 hover:shadow-[0_28px_50px_-12px_rgba(16,31,56,0.6)]"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img

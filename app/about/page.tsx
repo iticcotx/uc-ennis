@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
 import CoverflowCarousel from "@/components/CoverflowCarousel";
+import CompareInfographic from "@/components/CompareInfographic";
 import { promises } from "@/lib/content";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
@@ -65,39 +66,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Video band */}
-      <section className="grain relative overflow-hidden bg-navy-950 py-24 text-ivory">
-        <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
-                Our Standard of Care
+      {/* How we compare (animated infographic) */}
+      <section className="bg-ivory-soft py-24">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <div className="text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+                How We Compare
               </p>
-              <h2 className="font-display mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-                Treated like family, every visit.
+              <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+                The fast, affordable middle path.
               </h2>
-              <p className="mt-6 leading-relaxed text-ivory/75">
-                Our providers listen, explain, and treat you right the first
-                time — for every member of the family, from toddlers to
-                grandparents.
+              <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+                For everyday illness and injury, urgent care gets you seen faster
+                than a primary-care appointment and for far less than the ER.
               </p>
-              <Link
-                href="/services"
-                className="mt-8 inline-block rounded-xl bg-red px-7 py-3.5 text-sm font-bold text-ivory transition-all hover:bg-red-deep"
-              >
-                See Everything We Treat
-              </Link>
-            </Reveal>
-            <Reveal delay={150}>
-              <div className="overflow-hidden rounded-2xl border border-ivory/10 shadow-2xl">
-                <AutoVideo
-                  className="h-full w-full object-cover"
-                  src={media.aboutBandVideo.mp4}
-                  poster={media.aboutBandVideo.poster}
-                  label="A doctor talking warmly with a smiling patient"
-                />
-              </div>
-            </Reveal>
+            </div>
+          </Reveal>
+          <div className="mt-12">
+            <CompareInfographic />
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/services"
+              className="inline-block rounded-xl bg-red px-7 py-3.5 text-sm font-bold text-ivory transition-all hover:bg-red-deep"
+            >
+              See Everything We Treat
+            </Link>
           </div>
         </div>
       </section>
