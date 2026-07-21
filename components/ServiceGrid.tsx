@@ -74,9 +74,6 @@ const SERVICES: Service[] = [
   svc("covid", "COVID-19 testing", "Know in minutes", "COVID-19 testing & care",
     ["Rapid COVID testing with same-visit results", "Symptom treatment and recovery guidance", "Work and school documentation provided"],
     ["Rapid tests", "Same-day", "Documentation"], media.svcCovid, "Test samples being processed in a lab"),
-  svc("iv", "Dehydration & IV fluids", "Rehydrate & recover", "Dehydration & IV fluids",
-    ["Assessment for dehydration and its cause", "IV fluids administered on site", "Recovery plan so it doesn't come back"],
-    ["IV therapy", "On-site", "All ages"], media.svcIv, "A clinician preparing IV treatment"),
   svc("xray", "X-ray imaging", "Digital, on site, today", "Digital X-ray imaging",
     ["Digital X-ray taken during your visit", "Images read quickly — answers before you leave", "Copies available for specialists if needed"],
     ["On-site imaging", "Fast reads", "No referral"], media.svcXray, "A lab professional reviewing samples"),
@@ -86,31 +83,23 @@ const SERVICES: Service[] = [
   svc("vaccine", "Vaccinations", "For school, work & travel", "Vaccines & immunizations",
     ["Routine and required immunizations on site", "Records updated and copies provided", "Kid-friendly, quick appointments"],
     ["All ages", "Records", "Walk-in"], media.svcVaccine, "A clinician administering a vaccine"),
-  svc("school", "School & sports physicals", "Forms done same day", "School & sports physicals",
-    ["Complete physical exam by our providers", "Forms signed the same visit", "Quick turnaround for teams and schools"],
-    ["Same-day forms", "Sports clearance", "Walk-in"], media.svcSchool, "A parent with their child"),
   svc("womens", "Women's health", "Care built around you", "Women's health services",
     ["Discreet, respectful care for women's health needs", "UTI and infection testing on site", "Referrals coordinated when specialty care helps"],
     ["Discreet care", "On-site lab", "Same-day"], media.svcWomens, "A doctor talking with a patient"),
   svc("peds", "Pediatric care", "Gentle care for little ones", "Pediatric urgent care",
     ["Kid-first providers for illness and injuries", "Gentle exams with parents in the room", "School notes and follow-up guidance"],
     ["All ages", "Kid-friendly", "Mon–Fri"], media.svcPeds, "A mother caring for her child"),
-  svc("screen", "Drug screening", "For employers & employees", "Drug & alcohol screening",
-    ["DOT and non-DOT screening on site", "Chain-of-custody handled properly", "Fast, documented results for employers"],
-    ["Employer accounts", "Chain of custody", "Fast results"], media.svcScreen, "Samples processed in a laboratory"),
-  svc("employer", "Employer services", "Your workforce partner", "Occupational medicine",
-    ["Pre-employment physicals and screening programs", "Work injury care with proper documentation", "Return-to-work evaluations you can trust"],
-    ["Workers' comp", "Physicals", "Partnerships"], media.svcEmployer, "A medical team in a hospital hallway"),
 ];
 
-// Cross (+) mask over an 8-col × 6-row grid. '#' = a tile. 24 tiles total.
+// Balanced Greek-cross (+) mask over a 6-col × 6-row grid. '#' = a tile.
+// 20 tiles total — a big, readable medical cross.
 const MASK = [
-  "...##...",
-  "...##...",
-  "########",
-  "########",
-  "...##...",
-  "...##...",
+  "..##..",
+  "..##..",
+  "######",
+  "######",
+  "..##..",
+  "..##..",
 ];
 
 // Grid cells (1-based col/row) that form the cross, in reading order.
@@ -209,11 +198,11 @@ export default function ServiceGrid() {
           </p>
         </div>
 
-        {/* Cross (+) collage on desktop; simple grid on mobile */}
+        {/* Big balanced cross (+) collage on desktop; 2-col grid on mobile */}
         <div
-          className="mx-auto mt-12 grid max-w-3xl gap-2.5 sm:gap-3"
+          className="mx-auto mt-14 grid max-w-5xl gap-3 sm:gap-4"
           style={{
-            gridTemplateColumns: desktop ? "repeat(8, 1fr)" : "repeat(4, 1fr)",
+            gridTemplateColumns: desktop ? "repeat(6, 1fr)" : "repeat(2, 1fr)",
           }}
         >
           {SERVICES.map((s, i) => {
@@ -229,30 +218,30 @@ export default function ServiceGrid() {
                     ? { gridColumn: cell.col, gridRow: cell.row }
                     : undefined
                 }
-                className="group relative aspect-square overflow-hidden rounded-xl border border-navy-900/10 bg-navy-950 text-left shadow-sm transition-all duration-300 hover:z-10 hover:scale-[1.04] hover:border-red/60 hover:shadow-xl"
+                className="group relative aspect-square overflow-hidden rounded-2xl border border-navy-900/10 bg-navy-950 text-left shadow-md transition-all duration-300 hover:z-10 hover:scale-[1.05] hover:border-red/60 hover:shadow-2xl"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={s.video.poster}
                   alt=""
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover opacity-60 transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
+                  className="absolute inset-0 h-full w-full object-cover opacity-55 transition-all duration-500 group-hover:scale-110 group-hover:opacity-75"
                 />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/10" />
-                <div className="relative flex h-full flex-col justify-end p-3">
-                  <span className="font-display block text-[13px] font-black leading-tight text-ivory sm:text-sm">
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-950/15" />
+                <div className="relative flex h-full flex-col justify-end p-4 sm:p-5">
+                  <span className="font-display block text-base font-black leading-tight text-ivory sm:text-lg">
                     {s.label}
                   </span>
-                  <span className="mt-0.5 hidden items-center gap-1 text-[10px] font-semibold text-sky group-hover:text-ivory sm:flex">
+                  <span className="mt-1 flex items-center gap-1 text-xs font-semibold text-sky transition-colors group-hover:text-ivory">
                     {s.tagline}
                   </span>
                 </div>
                 {/* corner + mark reinforcing the medical-cross theme */}
                 <span
                   aria-hidden="true"
-                  className="absolute right-2 top-2 text-sky/70 transition-colors group-hover:text-red"
+                  className="absolute right-3 top-3 text-sky/70 transition-colors group-hover:text-red"
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <svg width="15" height="15" viewBox="0 0 12 12" fill="none">
                     <path d="M6 1.5v9M1.5 6h9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </span>
