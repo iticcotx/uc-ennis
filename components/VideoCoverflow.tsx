@@ -47,7 +47,7 @@ export default function VideoCoverflow({
 
   return (
     <div
-      className="relative"
+      className="relative overflow-x-clip"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       role="region"

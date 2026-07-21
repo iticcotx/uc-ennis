@@ -39,6 +39,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Never allow horizontal scroll — clip stray overflow without breaking
+   sticky/fixed positioning or vertical scrolling. */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   background: var(--ivory);
   color: var(--ink);
