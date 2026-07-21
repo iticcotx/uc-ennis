@@ -72,9 +72,6 @@ export default function StatusCard() {
         >
           Call {site.phone}
         </a>
-        <p className="text-center text-xs font-semibold text-sky">
-          Then dial ext. {site.ext}
-        </p>
         <a
           href={site.address.mapsUrl}
           target="_blank"

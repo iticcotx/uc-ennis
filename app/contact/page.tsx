@@ -8,7 +8,7 @@ import { media } from "@/lib/media";
 export const metadata: Metadata = {
   title: "Contact & Directions",
   description:
-    "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Monday–Friday, 9 AM–5 PM. Call (469) 940-3431 ext. 423.",
+    "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Monday–Friday, 9 AM–5 PM. Call (469) 940-3431.",
 };
 
 export default function ContactPage() {
@@ -69,7 +69,7 @@ export default function ContactPage() {
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
             ["Address", `${site.address.line1}, ${site.address.line2}`, site.address.mapsUrl],
-            ["Phone", `${site.phone} · ext. ${site.ext}`, site.phoneHref],
+            ["Phone", site.phone, site.phoneHref],
             ["Hours", `${site.hoursShort[0]}, ${site.hoursShort[1]} · Closed weekends`, null],
           ].map(([label, value, href]) => (
             <Reveal key={label as string}>

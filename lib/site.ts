@@ -4,7 +4,6 @@ export const site = {
   tagline: "Your Health Matters",
   phone: "(469) 940-3431",
   phoneHref: "tel:+14699403431",
-  ext: "423",
   address: {
     line1: "108 Chamber of Commerce Dr",
     line2: "Ennis, TX 75119",
