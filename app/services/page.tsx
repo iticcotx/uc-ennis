@@ -39,7 +39,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
               Illness, injuries, imaging, lab work, physicals, and workplace
-              medicine — walk in six days a week.
+              medicine — walk in five days a week.
             </p>
           </Reveal>
         </div>
@@ -74,7 +74,7 @@ export default function ServicesPage() {
               <p className="mt-6 leading-relaxed text-ink-soft">
                 No pediatric appointment for days? We see children of all ages
                 for illness, injuries, school physicals, and vaccinations —
-                with gentle providers and evening-friendly hours, six days a
+                with gentle providers and convenient weekday hours, five days a
                 week.
               </p>
               <ul className="mt-6 grid gap-3">
@@ -103,50 +103,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Employers band */}
-      <section className="grain relative overflow-hidden bg-navy-950 py-24 text-ivory">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/brand/monogram.webp"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-24 -top-24 h-105 w-105 select-none opacity-6"
-        />
-        <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
-                For Ennis Employers
-              </p>
-              <h2 className="font-display mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-                Keep your team healthy and on the job.
-              </h2>
-              <p className="mt-6 leading-relaxed text-ivory/75">
-                From pre-employment physicals and drug screening to work injury
-                treatment and workers&apos; compensation care — we partner with
-                local businesses to get employees seen fast and back to work
-                safely.
-              </p>
-              <a
-                href={site.phoneHref}
-                className="mt-8 inline-block rounded-xl bg-red px-7 py-3.5 text-sm font-bold text-ivory transition-all hover:bg-red-deep"
-              >
-                Set Up an Employer Account
-              </a>
-            </Reveal>
-            <Reveal delay={150}>
-              <div className="mx-auto h-96 w-full max-w-sm overflow-hidden rounded-2xl border border-ivory/10 shadow-2xl">
-                <AutoVideo
-                  className="h-full w-full object-cover"
-                  src={media.employersVideo.mp4}
-                  poster={media.employersVideo.poster}
-                  label="Blood sample tubes being processed in a laboratory analyzer"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* Note */}
       <section className="mx-auto max-w-6xl px-5 py-20 text-center lg:px-8">

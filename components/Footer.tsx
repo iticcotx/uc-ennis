@@ -24,7 +24,7 @@ export default function Footer() {
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/70">
               Walk-in urgent care, family medicine, and on-site X-ray &amp; lab
               for Ennis and Ellis County — quality treatment at a fraction of
-              emergency room cost, six days a week.
+              emergency room cost, five days a week.
             </p>
           </div>
 

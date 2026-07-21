@@ -100,7 +100,7 @@ const PAGES: Service[][] = [
       ["Discreet care", "On-site lab", "Same-day"], media.svcWomens, "A doctor talking with a patient"),
     svc("peds", "Pediatric care", "Gentle care for little ones", "Pediatric urgent care",
       ["Kid-first providers for illness and injuries", "Gentle exams with parents in the room", "School notes and follow-up guidance"],
-      ["All ages", "Kid-friendly", "6 days a week"], media.svcPeds, "A mother caring for her child"),
+      ["All ages", "Kid-friendly", "Mon–Fri"], media.svcPeds, "A mother caring for her child"),
     svc("screen", "Drug screening", "For employers & employees", "Drug & alcohol screening",
       ["DOT and non-DOT screening on site", "Chain-of-custody handled properly", "Fast, documented results for employers"],
       ["Employer accounts", "Chain of custody", "Fast results"], media.svcScreen, "Samples processed in a laboratory"),

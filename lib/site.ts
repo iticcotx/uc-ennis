@@ -10,6 +10,6 @@ export const site = {
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=108+Chamber+of+Commerce+Dr+Ennis+TX+75119",
   },
-  hours: "Monday – Saturday · 7:00 AM – 7:00 PM",
-  hoursShort: ["Monday – Saturday", "7:00 AM – 7:00 PM"],
+  hours: "Monday – Friday · 9:00 AM – 5:00 PM",
+  hoursShort: ["Monday – Friday", "9:00 AM – 5:00 PM"],
 };

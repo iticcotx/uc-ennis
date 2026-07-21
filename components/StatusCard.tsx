@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
 // Live open/closed card computed from the clinic's real hours
-// (Mon–Sat, 7:00 AM – 7:00 PM Central Time).
+// (Mon–Fri, 9:00 AM – 5:00 PM Central Time).
 function getStatus() {
   const now = new Date();
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -15,9 +15,9 @@ function getStatus() {
   }).formatToParts(now);
   const weekday = parts.find((p) => p.type === "weekday")?.value ?? "Mon";
   const hour = parseInt(parts.find((p) => p.type === "hour")?.value ?? "12", 10);
-  const openDay = weekday !== "Sun";
-  const open = openDay && hour >= 7 && hour < 19;
-  return { open, openDay, hour, weekday };
+  const weekend = weekday === "Sat" || weekday === "Sun";
+  const open = !weekend && hour >= 9 && hour < 17;
+  return { open, weekend, hour, weekday };
 }
 
 export default function StatusCard() {
@@ -53,10 +53,10 @@ export default function StatusCard() {
 
       <div className="mt-5">
         <p className="text-xs uppercase tracking-[0.15em] text-ivory/50">
-          {status?.weekday === "Sun" ? "Closed Sundays" : "Today's hours"}
+          {status?.weekend ? "Closed weekends" : "Today's hours"}
         </p>
         <p className="font-display mt-1 text-3xl font-bold text-ivory">
-          {status?.weekday === "Sun" ? "See you Monday" : "7 AM – 7 PM"}
+          {status?.weekend ? "See you Monday" : "9 AM – 5 PM"}
         </p>
       </div>
 

@@ -2,6 +2,7 @@ import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
 import HeroMontage from "@/components/HeroMontage";
 import StatusCard from "@/components/StatusCard";
+import Carousel from "@/components/Carousel";
 import ServiceGrid from "@/components/ServiceGrid";
 import Faq from "@/components/Faq";
 import { site } from "@/lib/site";
@@ -59,7 +60,7 @@ export default function Home() {
             <Reveal delay={360}>
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["7a–7p", "Mon – Sat"],
+                  ["9a–5p", "Mon – Fri"],
                   ["Fast", "little-to-no wait"],
                   ["X-Ray", "& lab on site"],
                   ["All ages", "kids to seniors"],
@@ -98,6 +99,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── Auto-advancing highlights carousel ───────────────── */}
+      <Carousel />
 
       {/* ── How it works ─────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
@@ -148,7 +152,7 @@ export default function Home() {
               </h2>
               <p className="mt-6 leading-relaxed text-ink-soft">
                 One simple promise: fast, professional medical care without
-                the long waits — delivered by a patient-first team, six days
+                the long waits — delivered by a patient-first team, five days
                 a week, right here in Ellis County.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
@@ -341,7 +345,7 @@ export default function Home() {
                   Feeling bad? Don&apos;t wait it out.
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-ivory/80">
-                  Walk in today — Monday through Saturday, 7 AM to 7 PM.
+                  Walk in today — Monday through Friday, 9 AM to 5 PM.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                   <a
