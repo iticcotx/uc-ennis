@@ -15,22 +15,24 @@ const adventist = (id: string) => `adventist-adventist-health-doctor-nurse-${id}
 const pp = (id: string) => `pexels-photo-${id}.jpeg`;
 
 export const media = {
-  // ── Hero montage (hero-only clips) ──────────────────────────
+  // ── Hero montage (hero-only clips) — SD renditions for fast,
+  //    jank-free autoplay/crossfade on any machine ──────────────
   heroMontage: [
-    video("30141924", "12925508_1920_1080_30fps", adventist("30141924"), 1920), // nurse caring for patient
-    video("6130037", "6130037-hd_1920_1080_30fps", pp("6130037"), 1920), // nurse tending patient bedside
-    video("30141938", "12925561_1920_1080_24fps", adventist("30141938"), 1920), // doctor with smiling patient
+    video("30141924", "12925505_640_360_30fps", adventist("30141924"), 1280), // nurse caring for patient
+    video("6130037", "6130037-sd_640_360_30fps", pp("6130037"), 1280), // nurse tending patient bedside
+    video("30141938", "12925555_640_360_24fps", adventist("30141938"), 1280), // doctor with smiling patient
   ],
 
-  // ── Section videos (each used exactly once) ─────────────────
-  teamVideo: video("30141965", "12925604_1920_1080_24fps", adventist("30141965"), 1920), // why-us: medical team
-  ctaVideo: video("6130026", "6130026-hd_1920_1080_30fps", pp("6130026"), 1920), // home CTA: nurse checking patient
-  servicesHeaderVideo: video("4214779", "4214779-hd_1920_1080_25fps", pp("4214779"), 1920), // services header: lab scientist
-  pediatricSectionVideo: video("8375752", "8375752-hd_720_1366_25fps", pp("8375752"), 720), // pediatric: mom on advice call
+  // ── Section / carousel videos — SD renditions (these autoplay on
+  //    view; light files keep the page smooth) ──────────────────
+  teamVideo: video("30141965", "12925601_640_360_24fps", adventist("30141965"), 1280), // why-us: medical team
+  ctaVideo: video("6130026", "6130026-sd_640_360_30fps", pp("6130026"), 1280), // home CTA: nurse checking patient
+  servicesHeaderVideo: video("4214779", "4214779-sd_640_360_25fps", pp("4214779"), 1280), // services header: lab scientist
+  pediatricSectionVideo: video("8375752", "8375752-sd_506_960_25fps", pp("8375752"), 720), // pediatric: mom on advice call
   employersVideo: video("8540037", "8540037-hd_720_1366_25fps", "analysis-biochemistry-biology-biotechnology-8540037.jpeg", 720), // employers: lab work
-  aboutHeaderVideo: video("6686962", "6686962-hd_1920_1080_25fps", pp("6686962"), 1920), // about header: medic with patient
-  aboutBandVideo: video("8375441", "8375441-hd_720_1366_25fps", pp("8375441"), 720), // about band: caring consult
-  contactHeaderVideo: video("6998548", "6998548-hd_1080_1920_25fps", "cardiogram-clinic-diagnosis-doctor-6998548.jpeg", 1080), // contact: patient care
+  aboutHeaderVideo: video("6686962", "6686962-sd_640_360_25fps", pp("6686962"), 1280), // about header: medic with patient
+  aboutBandVideo: video("8375441", "8375441-sd_506_960_25fps", pp("8375441"), 720), // about band: caring consult
+  contactHeaderVideo: video("6998548", "6998548-sd_540_960_25fps", "cardiogram-clinic-diagnosis-doctor-6998548.jpeg", 720), // contact: patient care
 
   // ── Service card clips (24 unique) ──────────────────────────
   svcFever: video("3989331", "3989331-hd_1920_1080_30fps", pp("3989331")), // mom checking son's temperature

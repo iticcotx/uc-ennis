@@ -8,7 +8,7 @@ import { media } from "@/lib/media";
 export const metadata: Metadata = {
   title: "Contact & Directions",
   description:
-    "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Monday–Friday, 9 AM–5 PM. Call (469) 442-4325.",
+    "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Monday–Friday, 9 AM–5 PM. Call (469) 940-3431 ext. 423.",
 };
 
 export default function ContactPage() {

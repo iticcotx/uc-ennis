@@ -2,8 +2,8 @@ export const site = {
   name: "Urgent Care of Ennis",
   fullName: "Urgent Care of Ennis",
   tagline: "Your Health Matters",
-  phone: "(469) 442-4325",
-  phoneHref: "tel:+14694424325",
+  phone: "(469) 940-3431 ext. 423",
+  phoneHref: "tel:+14699403431;ext=423",
   address: {
     line1: "108 Chamber of Commerce Dr",
     line2: "Ennis, TX 75119",
