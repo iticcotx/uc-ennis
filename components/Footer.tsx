@@ -61,6 +61,7 @@ export default function Footer() {
                 <a href={site.phoneHref} className="transition-colors hover:text-sky">
                   {site.phone}
                 </a>
+                <span className="text-ivory/60"> · ext. {site.ext}</span>
               </li>
               <li className="text-ivory/60">{site.hours}</li>
             </ul>

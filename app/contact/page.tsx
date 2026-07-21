@@ -69,7 +69,7 @@ export default function ContactPage() {
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
             ["Address", `${site.address.line1}, ${site.address.line2}`, site.address.mapsUrl],
-            ["Phone", site.phone, site.phoneHref],
+            ["Phone", `${site.phone} · ext. ${site.ext}`, site.phoneHref],
             ["Hours", `${site.hoursShort[0]}, ${site.hoursShort[1]} · Closed weekends`, null],
           ].map(([label, value, href]) => (
             <Reveal key={label as string}>
