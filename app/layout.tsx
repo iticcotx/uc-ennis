@@ -18,6 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.urgentcareofennis.com"),
+  verification: { google: "YZVYzNamFR2DyiUewnofvAmYBduAC09nW-yRZ7puvn0" },
   title: {
     default: `${site.name} — Walk-In Clinic & Urgent Care | Ennis, TX`,
     template: `%s | ${site.name}`,
