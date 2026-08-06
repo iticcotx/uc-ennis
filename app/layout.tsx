@@ -5,6 +5,8 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
+import MobileActionBar from "@/components/MobileActionBar";
 
 const archivo = Archivo({
   variable: "--font-display",
@@ -18,13 +20,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.urgentcareofennis.com"),
+  icons: { icon: "/icon.svg", apple: "/icon.svg" },
   verification: { google: "YZVYzNamFR2DyiUewnofvAmYBduAC09nW-yRZ7puvn0" },
   title: {
-    default: `${site.name} — Walk-In Clinic & Urgent Care | Ennis, TX`,
+    default: `${site.name} â€” Walk-In Clinic & Urgent Care | Ennis, TX`,
     template: `%s | ${site.name}`,
   },
   description:
-    "Urgent Care of Ennis — walk-in urgent care, family medicine, on-site X-ray and lab, pediatric care, and occupational medicine in Ennis, TX. Open Monday–Friday, 9 AM–5 PM. Little-to-no wait times.",
+    "Urgent Care of Ennis provides walk-in urgent care, family and pediatric care, on-site X-ray and lab services, physicals, and occupational medicine. Open Mondayâ€“Friday, 9 AMâ€“5 PM.",
 };
 
 const structuredData = {
@@ -34,6 +37,9 @@ const structuredData = {
   url: "https://www.urgentcareofennis.com",
   telephone: site.phone,
   address: { "@type": "PostalAddress", streetAddress: site.address.line1, addressLocality: "Ennis", addressRegion: "TX", postalCode: "75119", addressCountry: "US" },
+  hasMap: site.address.mapsUrl,
+  image: "https://www.urgentcareofennis.com/brand/monogram.webp",
+  areaServed: [{ "@type": "City", name: "Ennis" }, { "@type": "AdministrativeArea", name: "Ellis County" }],
   openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "17:00" },
 };
 
@@ -55,20 +61,17 @@ export default function RootLayout({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-BRRVBZ2TSP');
-document.addEventListener('click', function(event) {
-  var link = event.target.closest('a');
-  if (!link) return;
-  if (link.href.indexOf('tel:') === 0) {
-    gtag('event', 'generate_lead', { lead_type: 'phone_call', link_url: link.href });
-  }
-});`}
+`}
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
         <Nav />
+        <AnalyticsTracker />
         <main className="flex-1">{children}</main>
         <Footer />
+        <MobileActionBar />
       </body>
     </html>
   );
 }
+

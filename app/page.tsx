@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* ── Hero: split layout with live status card ─────────── */}
+      {/* â”€â”€ Hero: split layout with live status card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <HeroMontage clips={media.heroMontage} className="absolute inset-0" />
         <div
@@ -46,26 +46,26 @@ export default function Home() {
             <Reveal>
               <p className="inline-flex items-center gap-2 rounded-lg bg-red px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-ivory">
                 <span className="h-1.5 w-1.5 rounded-full bg-ivory" aria-hidden="true" />
-                Now open in Ennis — walk-ins welcome
+                Now open in Ennis â€” walk-ins welcome
               </p>
             </Reveal>
             <Reveal delay={120}>
               <h1 className="font-display mt-6 max-w-2xl text-4xl font-black leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.6rem]">
                 Urgent care,{" "}
-                <span className="text-sky">without the wait.</span>
+                <span className="text-sky">care close to home.</span>
               </h1>
             </Reveal>
             <Reveal delay={240}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ivory/85">
-                Illness, injuries, X-ray, and lab — treated the same day for
+                Illness, injuries, X-ray, and lab â€” treated the same day for
                 the whole family, at a fraction of emergency room cost.
               </p>
             </Reveal>
             <Reveal delay={360}>
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["9a–5p", "Mon – Fri"],
-                  ["Fast", "little-to-no wait"],
+                  ["9aâ€“5p", "Mon â€“ Fri"],
+                  ["Walk-in", "weekday care"],
                   ["X-Ray", "& lab on site"],
                   ["All ages", "kids to seniors"],
                 ].map(([big, small]) => (
@@ -87,14 +87,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Trust strip ──────────────────────────────────────── */}
+      {/* â”€â”€ Trust strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="border-y-2 border-navy-950 bg-red">
         <div className="mx-auto grid max-w-6xl grid-cols-2 divide-ivory/20 px-5 py-4 text-ivory sm:grid-cols-4 sm:divide-x lg:px-8">
           {[
-            ["✚", "Walk-ins welcome"],
-            ["✚", "On-site X-ray & lab"],
-            ["✚", "Most insurance accepted"],
-            ["✚", "Little-to-no wait"],
+            ["âœš", "Walk-ins welcome"],
+            ["âœš", "On-site X-ray & lab"],
+            ["âœš", "Most insurance accepted"],
+            ["âœš", "Weekday walk-ins"],
           ].map(([mark, label]) => (
             <p key={label} className="flex items-center justify-center gap-2 px-2 py-1 text-center text-xs font-bold uppercase tracking-wide sm:text-sm">
               <span aria-hidden="true" className="text-ivory/60">{mark}</span>
@@ -104,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── How it works ─────────────────────────────────────── */}
+      {/* â”€â”€ How it works â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
@@ -116,9 +116,9 @@ export default function Home() {
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {[
-            ["Walk in or call", "Come in any time we're open — no appointment needed. Call ahead if you'd like us to expect you."],
+            ["Walk in or call", "Come in any time we're open â€” no appointment needed. Call ahead if you'd like us to expect you."],
             ["Get seen fast", "A provider evaluates you quickly, with on-site X-ray and lab for same-visit answers."],
-            ["Leave feeling better", "Treatment, prescriptions, and a clear care plan — all in one visit."],
+            ["Leave with a plan", "Treatment and a clear care plan, with next steps explained before you go."],
           ].map(([title, text], i) => (
             <Reveal key={title} delay={i * 120}>
               <div className="relative h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-8 transition-colors hover:border-red/40">
@@ -135,12 +135,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Services: pinned flip deck with zoom popups ──────── */}
+      {/* â”€â”€ Services: pinned flip deck with zoom popups â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section>
         <ServiceGrid />
       </section>
 
-      {/* ── Why us ───────────────────────────────────────────── */}
+      {/* â”€â”€ Why us â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24">
         <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-2">
@@ -152,13 +152,13 @@ export default function Home() {
                 Built for Ennis. Ready every day.
               </h2>
               <p className="mt-6 leading-relaxed text-ink-soft">
-                One simple promise: fast, professional medical care without
-                the long waits — delivered by a patient-first team, right here
+                One simple promise: professional medical care delivered by a
+                patient-first team, right here
                 in Ellis County.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
-                  ["Board-certified", "expert providers"],
+                  ["Experienced", "care team"],
                   ["One visit", "exam, imaging, lab & treatment"],
                   ["Fair pricing", "fraction of ER cost"],
                   ["Family care", "toddlers to grandparents"],
@@ -184,8 +184,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Insurance & pricing ──────────────────────────────── */}
-      <section className="py-24">
+      {/* â”€â”€ Insurance & pricing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="insurance" className="py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
@@ -202,7 +202,7 @@ export default function Home() {
                   Insurance we accept
                 </h3>
                 <p className="mt-2 text-sm text-ink-soft">
-                  Most major plans accepted — coverage varies by policy. We&apos;ll
+                  Most major plans accepted â€” coverage varies by policy. We&apos;ll
                   verify your benefits before treatment.
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-2.5">
@@ -249,7 +249,7 @@ export default function Home() {
                 </div>
                 <p className="mt-auto pt-5 text-[11px] leading-relaxed text-ivory/50">
                   Additional services like X-ray, labs, or procedures may have
-                  separate fees — always quoted before treatment.
+                  separate fees â€” always quoted before treatment.
                 </p>
               </div>
             </Reveal>
@@ -257,7 +257,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Map / find us ────────────────────────────────────── */}
+      {/* â”€â”€ Map / find us â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-ivory-soft py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
@@ -271,7 +271,7 @@ export default function Home() {
           <Reveal delay={120}>
             <div className="relative mt-10 overflow-hidden rounded-2xl border-2 border-navy-900/10 shadow-xl">
               <iframe
-                title="Map to Urgent Care of Ennis — 108 Chamber of Commerce Dr, Ennis, TX 75119"
+                title="Map to Urgent Care of Ennis â€” 108 Chamber of Commerce Dr, Ennis, TX 75119"
                 src="https://www.google.com/maps?q=108+Chamber+of+Commerce+Dr+Ennis+TX+75119&output=embed"
                 className="h-115 w-full border-0"
                 loading="lazy"
@@ -311,7 +311,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────── */}
+      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
@@ -330,7 +330,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA band ─────────────────────────────────────────── */}
+      {/* â”€â”€ CTA band â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="pb-24 bg-ivory">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
@@ -346,7 +346,7 @@ export default function Home() {
                   Feeling bad? Don&apos;t wait it out.
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-ivory/80">
-                  Walk in today — Monday through Friday, 9 AM to 5 PM.
+                  Walk in today â€” Monday through Friday, 9 AM to 5 PM.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                   <a
@@ -372,3 +372,4 @@ export default function Home() {
     </>
   );
 }
+

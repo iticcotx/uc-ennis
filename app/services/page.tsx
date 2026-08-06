@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
+import Link from "next/link";
 import AutoVideo from "@/components/AutoVideo";
 import ServiceGrid from "@/components/ServiceGrid";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Walk-In Urgent Care Services in Ennis, TX",
   alternates: { canonical: "/services" },
   description:
     "Walk-in urgent care, on-site X-ray and lab, family medicine, physicals, pediatric and women's health, and occupational medicine at Urgent Care of Ennis in Ennis, TX.",
@@ -36,11 +37,11 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="font-display mt-4 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
-              Everything handled in one visit.
+              Walk-In Urgent Care Services in Ennis, TX
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
               Illness, injuries, imaging, lab work, physicals, and workplace
-              medicine — walk in Monday through Friday.
+              medicine â€” walk in Monday through Friday.
             </p>
           </Reveal>
         </div>
@@ -49,6 +50,22 @@ export default function ServicesPage() {
       {/* Pinned flip deck with zoom popups */}
       <section>
         <ServiceGrid />
+      </section>
+
+      <section className="bg-ivory-soft py-16">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <h2 className="font-display text-2xl font-black text-navy-900">Explore care by need</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Walk-in urgent care", "/services/walk-in-urgent-care"],
+              ["On-site X-ray and lab", "/services/x-ray-lab"],
+              ["Pediatric and family care", "/services/pediatric-family-urgent-care"],
+              ["School, sports, and work physicals", "/services/physicals"],
+              ["Occupational medicine", "/services/occupational-medicine"],
+              ["Insurance and pricing", "/#insurance"],
+            ].map(([label, href]) => <Link key={href} href={href} className="rounded-xl border-2 border-navy-900/10 bg-white px-4 py-4 text-sm font-bold text-navy-900 transition-colors hover:border-red/50 hover:text-red">{label}</Link>)}
+          </div>
+        </div>
       </section>
 
       {/* Pediatric & family highlight */}
@@ -70,13 +87,12 @@ export default function ServicesPage() {
                 Pediatric & Family Care
               </p>
               <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-                When your kiddo spikes a fever at 6 PM.
+                When your child needs weekday care.
               </h2>
               <p className="mt-6 leading-relaxed text-ink-soft">
-                No pediatric appointment for days? We see children of all ages
-                for illness, injuries, school physicals, and vaccinations —
-                with gentle providers and same-day availability during our
-                weekday hours.
+                We see children of all ages for illness, injuries, school
+                physicals, and vaccinations during our published weekday
+                hours, with parents welcome to stay involved in the visit.
               </p>
               <ul className="mt-6 grid gap-3">
                 {[
@@ -124,7 +140,7 @@ export default function ServicesPage() {
               </h2>
               <p className="mt-6 leading-relaxed text-ivory/75">
                 From pre-employment physicals and drug screening to work injury
-                treatment and workers&apos; compensation care — we partner with
+                treatment and workers&apos; compensation care â€” we partner with
                 local businesses to get employees seen fast and back to work
                 safely.
               </p>
@@ -157,7 +173,7 @@ export default function ServicesPage() {
             <a href={site.phoneHref} className="font-bold text-red hover:underline">
               {site.phone}
             </a>{" "}
-            — if it&apos;s a life-threatening emergency, call 911 or go to the
+            â€” if it&apos;s a life-threatening emergency, call 911 or go to the
             nearest ER.
           </p>
         </Reveal>
@@ -165,3 +181,4 @@ export default function ServicesPage() {
     </>
   );
 }
+

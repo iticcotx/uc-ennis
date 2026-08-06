@@ -22,11 +22,11 @@ export const conditions = [
 export const promises = [
   {
     title: "Walk-Ins Always Welcome",
-    text: "No appointment needed — ever. Walk in any day we're open and be seen quickly.",
+    text: "No appointment needed â€” ever. Walk in any day we're open and be seen quickly.",
   },
   {
-    title: "Little-to-No Wait",
-    text: "Our goal is to have you seen in minutes, not hours. Most visits are in and out fast.",
+    title: "Clear Next Steps",
+    text: "Our care team explains the evaluation and recommended next steps before you leave.",
   },
   {
     title: "A Fraction of ER Cost",
@@ -34,7 +34,7 @@ export const promises = [
   },
   {
     title: "Everything Under One Roof",
-    text: "X-ray, lab, and treatment in one place — no running across town for answers.",
+    text: "X-ray, lab, and treatment in one place â€” no running across town for answers.",
   },
   {
     title: "Care for Every Age",
@@ -45,3 +45,4 @@ export const promises = [
     text: "We accept most major insurance plans, plus affordable self-pay options.",
   },
 ];
+

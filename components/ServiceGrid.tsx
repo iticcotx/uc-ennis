@@ -27,30 +27,30 @@ const svc = (
   alt: string
 ): Service => ({ key, label, tagline, headline, plan, caps, video, alt });
 
-// 3 pages × 8 cards. Scrolling through the pinned section flips the deck
+// 3 pages Ã— 8 cards. Scrolling through the pinned section flips the deck
 // page by page until every service has been shown.
 const PAGES: Service[][] = [
   [
     svc("fever", "Fever or flu", "Rapid tests, fast relief", "Fever, flu & feeling awful",
-      ["Rapid flu, strep & COVID tests with results in minutes", "Provider exam and same-visit treatment plan", "Medications prescribed before you walk out"],
+      ["Rapid flu, strep & COVID tests with results in minutes", "Provider exam and same-visit treatment plan", "Treatment options explained before you leave"],
       ["Rapid tests", "On-site lab", "All ages"], media.svcFever, "A mother checking her sick son's temperature"),
     svc("throat", "Cough or sore throat", "Strep testing on site", "Cough, cold & sore throat",
-      ["Strep and respiratory testing on site", "Ear, nose & throat exam by an experienced provider", "Relief plan — from prescriptions to home-care guidance"],
+      ["Strep and respiratory testing on site", "Ear, nose & throat exam by an experienced provider", "A clear care plan and home-care guidance"],
       ["Strep testing", "Respiratory care", "Same-day"], media.svcThroat, "A nurse checking on a patient"),
     svc("cut", "Cut or wound", "Stitches without the ER", "Cuts, wounds & burns",
-      ["Wound cleaning and numbing for comfort", "Stitches, skin glue, or dressing — whatever heals best", "Tetanus updates and follow-up care included"],
+      ["Wound cleaning and numbing for comfort", "Stitches, skin glue, or dressing â€” whatever heals best", "Tetanus updates and follow-up care included"],
       ["Stitches on site", "Burn care", "Tetanus shots"], media.svcCut, "A clinician bandaging an injured hand"),
     svc("sprain", "Sprain or fracture", "X-ray answers today", "Sprains, strains & fractures",
-      ["Digital X-ray on site — know if it's broken today", "Splinting and injury care in the same visit", "Referral coordination if you need a specialist"],
+      ["Digital X-ray on site â€” know if it's broken today", "Splinting and injury care in the same visit", "Referral coordination if you need a specialist"],
       ["Digital X-ray", "Splinting", "Sports injuries"], media.svcSprain, "A nurse providing attentive care to a patient"),
     svc("stomach", "Stomach trouble", "Labs & IV fluids on site", "Stomach pain, nausea & more",
-      ["On-site lab work to find the cause fast", "IV fluids for dehydration when you need them", "Treatment and prescriptions the same visit"],
+      ["On-site lab work to support evaluation", "IV fluids for dehydration when clinically appropriate", "Treatment and a clear care plan"],
       ["On-site lab", "IV fluids", "Same-day"], media.svcStomach, "A doctor talking with a patient at the bedside"),
     svc("rash", "Rash or allergy", "Bites, breakouts & reactions", "Rashes, allergies & bites",
       ["Skin exam to identify the reaction", "Allergic reaction treatment, including bug & animal bites", "Care plan to calm it down and keep it down"],
       ["Allergy care", "Bite treatment", "Kid-friendly"], media.svcRash, "A mother caring for her child at home"),
     svc("physical", "Need a physical", "School, sports & work forms", "Physicals & vaccines",
-      ["School, sports & annual physicals — walk in, walk out", "Vaccinations and immunization records handled", "Forms signed and ready the same day"],
+      ["School, sports & annual physicals â€” walk in, walk out", "Vaccinations and immunization records handled", "Forms signed and ready the same day"],
       ["School forms", "Sports physicals", "Vaccines"], media.svcPhysical, "A clinician preparing a vaccination"),
     svc("work", "Work injury", "Workers' comp handled", "Work injuries & workers' comp",
       ["Injury care with proper workers' comp documentation", "Drug & alcohol screening and pre-employment physicals", "Return-to-work evaluations your employer can trust"],
@@ -61,13 +61,13 @@ const PAGES: Service[][] = [
       ["Ear and sinus exam to pinpoint the infection", "Treatment to relieve pressure and pain fast", "Antibiotics prescribed when they're truly needed"],
       ["All ages", "Same-day", "ENT exam"], media.svcEar, "A nurse examining a patient"),
     svc("uti", "UTI or bladder", "Discreet, same-day testing", "UTIs & bladder infections",
-      ["On-site urine testing with fast results", "Provider consult — discreet and judgment-free", "Prescription sent before you leave"],
+      ["On-site urine testing with fast results", "Provider consult â€” discreet and judgment-free", "Treatment options and next steps explained"],
       ["On-site lab", "Women's health", "Fast results"], media.svcUti, "A doctor consulting with a patient"),
     svc("pinkeye", "Pink eye", "Contagious? Find out now", "Pink eye & eye irritation",
       ["Eye exam to tell infection from allergy", "Drops or ointment prescribed on the spot", "School and work return guidance included"],
       ["Kid-friendly", "Same-day", "School notes"], media.svcPinkeye, "A parent comforting a child"),
     svc("asthma", "Asthma or breathing", "Breathe easier today", "Asthma & breathing trouble",
-      ["Breathing assessment and oxygen check", "Nebulizer treatment on site when needed", "Inhaler prescriptions and action plan"],
+      ["Breathing assessment and oxygen check", "Nebulizer treatment on site when clinically appropriate", "Breathing-care instructions and follow-up guidance"],
       ["Nebulizer", "Respiratory care", "All ages"], media.svcAsthma, "A parent caring for a sick child"),
     svc("burn", "Minor burns", "Cool it, treat it, heal it", "Minor burn care",
       ["Burn assessment and professional cleaning", "Dressing to protect and speed healing", "Follow-up plan and scar prevention guidance"],
@@ -84,7 +84,7 @@ const PAGES: Service[][] = [
   ],
   [
     svc("xray", "X-ray imaging", "Digital, on site, today", "Digital X-ray imaging",
-      ["Digital X-ray taken during your visit", "Images read quickly — answers before you leave", "Copies available for specialists if needed"],
+      ["Digital X-ray taken during your visit", "Images read quickly â€” answers before you leave", "Copies available for specialists if needed"],
       ["On-site imaging", "Fast reads", "No referral"], media.svcXray, "A lab professional reviewing samples"),
     svc("lab", "Lab & rapid tests", "Results in minutes", "On-site lab & rapid testing",
       ["Blood, urine, and swab testing under one roof", "Rapid flu, strep & COVID results in minutes", "Results explained face to face"],
@@ -100,7 +100,7 @@ const PAGES: Service[][] = [
       ["Discreet care", "On-site lab", "Same-day"], media.svcWomens, "A doctor talking with a patient"),
     svc("peds", "Pediatric care", "Gentle care for little ones", "Pediatric urgent care",
       ["Kid-first providers for illness and injuries", "Gentle exams with parents in the room", "School notes and follow-up guidance"],
-      ["All ages", "Kid-friendly", "6 days a week"], media.svcPeds, "A mother caring for her child"),
+      ["All ages", "Kid-friendly", "Weekday care"], media.svcPeds, "A mother caring for her child"),
     svc("screen", "Drug screening", "For employers & employees", "Drug & alcohol screening",
       ["DOT and non-DOT screening on site", "Chain-of-custody handled properly", "Fast, documented results for employers"],
       ["Employer accounts", "Chain of custody", "Fast results"], media.svcScreen, "Samples processed in a laboratory"),
@@ -129,7 +129,7 @@ export default function ServiceGrid() {
     reduceMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
 
-  // Scroll → which page should be visible (section is pinned meanwhile)
+  // Scroll â†’ which page should be visible (section is pinned meanwhile)
   useEffect(() => {
     const onScroll = () => {
       const wrap = wrapRef.current;
@@ -241,7 +241,7 @@ export default function ServiceGrid() {
                 What brings you in today?
               </h2>
               <p className="mt-2 max-w-xl text-sm text-ink-soft sm:text-base">
-                Tap a card for details — keep scrolling to flip through everything we treat.
+                Tap a card for details â€” keep scrolling to flip through everything we treat.
               </p>
             </div>
             {/* Page dots */}
@@ -394,3 +394,4 @@ export default function ServiceGrid() {
     </div>
   );
 }
+
