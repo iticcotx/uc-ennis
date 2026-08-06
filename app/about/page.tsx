@@ -7,10 +7,10 @@ import { site } from "@/lib/site";
 import { media } from "@/lib/media";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Urgent Care of Ennis",
   alternates: { canonical: "/about" },
   description:
-    "Urgent Care of Ennis brings fast, professional, walk-in medical care to Ennis and Ellis County, TX — on-site X-ray and lab, Monday through Friday.",
+    "Urgent Care of Ennis brings fast, professional, walk-in medical care to Ennis and Ellis County, TX â€” on-site X-ray and lab, Monday through Friday.",
 };
 
 export default function AboutPage() {
@@ -37,10 +37,10 @@ export default function AboutPage() {
               About Us
             </p>
             <h1 className="font-display mt-4 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
-              Great care, close to home.
+              About Urgent Care of Ennis
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
-              Fast, professional medical care for Ennis and Ellis County —
+              Fast, professional medical care for Ennis and Ellis County â€”
               without the long waits, and without the ER bill. Because your
               health matters.
             </p>
@@ -88,7 +88,7 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 leading-relaxed text-ivory/75">
                 Our providers listen, explain, and treat you right the first
-                time — for every member of the family, from toddlers to
+                time â€” for every member of the family, from toddlers to
                 grandparents.
               </p>
               <Link
@@ -116,10 +116,10 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl px-5 py-24 text-center lg:px-8">
         <Reveal>
           <h2 className="font-display text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
-            Come see us — no appointment needed.
+            Come see us â€” no appointment needed.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-            {site.address.line1}, {site.address.line2} · {site.hours}
+            {site.address.line1}, {site.address.line2} Â· {site.hours}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
@@ -142,3 +142,4 @@ export default function AboutPage() {
     </>
   );
 }
+
