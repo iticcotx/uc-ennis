@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
 // Live open/closed card computed from the clinic's real hours
-// (Mon–Fri, 9:00 AM – 5:00 PM Central Time).
+// (Mon-Fri, 9:00 AM - 5:00 PM Central Time).
 function getStatus() {
   const now = new Date();
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -47,7 +47,7 @@ export default function StatusCard() {
             className={`h-2 w-2 rounded-full ${open ? "pulse-dot bg-green-400" : "bg-ivory/50"}`}
             aria-hidden="true"
           />
-          {status ? (open ? "Open now" : "Closed") : "…"}
+          {status ? (open ? "Open now" : "Closed") : "â€¦"}
         </span>
       </div>
 
@@ -56,7 +56,7 @@ export default function StatusCard() {
           {status && !status.openDay ? "Closed weekends" : "Today's hours"}
         </p>
         <p className="font-display mt-1 text-3xl font-bold text-ivory">
-          {status && !status.openDay ? "See you Monday" : "9 AM – 5 PM"}
+          {status && !status.openDay ? "See you Monday" : "9 AM - 5 PM"}
         </p>
       </div>
 
@@ -78,13 +78,14 @@ export default function StatusCard() {
           rel="noopener noreferrer"
           className="rounded-xl border border-ivory/25 px-5 py-3 text-center text-sm font-semibold text-ivory transition-colors hover:border-sky hover:text-sky"
         >
-          Get Directions →
+          Get Directions â†’
         </a>
       </div>
 
       <p className="mt-4 text-center text-[11px] text-ivory/50">
-        Walk-ins welcome — no appointment needed
+        Walk-ins welcome - no appointment needed
       </p>
     </div>
   );
 }
+
