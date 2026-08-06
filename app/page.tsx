@@ -46,25 +46,25 @@ export default function Home() {
             <Reveal>
               <p className="inline-flex items-center gap-2 rounded-lg bg-red px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-ivory">
                 <span className="h-1.5 w-1.5 rounded-full bg-ivory" aria-hidden="true" />
-                Now open in Ennis â€” walk-ins welcome
+                Now open in Ennis - walk-ins welcome
               </p>
             </Reveal>
             <Reveal delay={120}>
               <h1 className="font-display mt-6 max-w-2xl text-4xl font-black leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.6rem]">
-                Urgent care,{" "}
-                <span className="text-sky">care close to home.</span>
+                Walk-In Urgent Care in Ennis, TX
               </h1>
             </Reveal>
             <Reveal delay={240}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ivory/85">
-                Illness, injuries, X-ray, and lab â€” treated the same day for
-                the whole family, at a fraction of emergency room cost.
+                Same-day walk-in care for adults and children, with no
+                appointment required. On-site X-ray and lab availability can
+                support your evaluation when appropriate.
               </p>
             </Reveal>
             <Reveal delay={360}>
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["9aâ€“5p", "Mon â€“ Fri"],
+                  ["9a-5p", "Mon - Fri"],
                   ["Walk-in", "weekday care"],
                   ["X-Ray", "& lab on site"],
                   ["All ages", "kids to seniors"],
@@ -116,7 +116,7 @@ export default function Home() {
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {[
-            ["Walk in or call", "Come in any time we're open â€” no appointment needed. Call ahead if you'd like us to expect you."],
+            ["Walk in or call", "Come in any time we're open - no appointment needed. Call ahead if you'd like us to expect you."],
             ["Get seen fast", "A provider evaluates you quickly, with on-site X-ray and lab for same-visit answers."],
             ["Leave with a plan", "Treatment and a clear care plan, with next steps explained before you go."],
           ].map(([title, text], i) => (
@@ -202,7 +202,7 @@ export default function Home() {
                   Insurance we accept
                 </h3>
                 <p className="mt-2 text-sm text-ink-soft">
-                  Most major plans accepted â€” coverage varies by policy. We&apos;ll
+                  Most major plans accepted - coverage varies by policy. We&apos;ll
                   verify your benefits before treatment.
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-2.5">
@@ -249,7 +249,7 @@ export default function Home() {
                 </div>
                 <p className="mt-auto pt-5 text-[11px] leading-relaxed text-ivory/50">
                   Additional services like X-ray, labs, or procedures may have
-                  separate fees â€” always quoted before treatment.
+                  separate fees - always quoted before treatment.
                 </p>
               </div>
             </Reveal>
@@ -271,7 +271,7 @@ export default function Home() {
           <Reveal delay={120}>
             <div className="relative mt-10 overflow-hidden rounded-2xl border-2 border-navy-900/10 shadow-xl">
               <iframe
-                title="Map to Urgent Care of Ennis â€” 108 Chamber of Commerce Dr, Ennis, TX 75119"
+                title="Map to Urgent Care of Ennis - 108 Chamber of Commerce Dr, Ennis, TX 75119"
                 src="https://www.google.com/maps?q=108+Chamber+of+Commerce+Dr+Ennis+TX+75119&output=embed"
                 className="h-115 w-full border-0"
                 loading="lazy"
@@ -346,7 +346,7 @@ export default function Home() {
                   Feeling bad? Don&apos;t wait it out.
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-ivory/80">
-                  Walk in today â€” Monday through Friday, 9 AM to 5 PM.
+                  Walk in today - Monday through Friday, 9 AM to 5 PM.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                   <a
