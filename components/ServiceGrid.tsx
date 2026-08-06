@@ -27,7 +27,7 @@ const svc = (
   alt: string
 ): Service => ({ key, label, tagline, headline, plan, caps, video, alt });
 
-// 3 pages Ã— 8 cards. Scrolling through the pinned section flips the deck
+// 3 pages              8 cards. Scrolling through the pinned section flips the deck
 // page by page until every service has been shown.
 const PAGES: Service[][] = [
   [
@@ -129,7 +129,7 @@ export default function ServiceGrid() {
     reduceMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
 
-  // Scroll â†’ which page should be visible (section is pinned meanwhile)
+  // Scroll            ' which page should be visible (section is pinned meanwhile)
   useEffect(() => {
     const onScroll = () => {
       const wrap = wrapRef.current;
