@@ -54,7 +54,14 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-BRRVBZ2TSP');`}
+gtag('config', 'G-BRRVBZ2TSP');
+document.addEventListener('click', function(event) {
+  var link = event.target.closest('a');
+  if (!link) return;
+  if (link.href.indexOf('tel:') === 0) {
+    gtag('event', 'generate_lead', { lead_type: 'phone_call', link_url: link.href });
+  }
+});`}
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
