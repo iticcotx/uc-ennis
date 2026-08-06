@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
 import HeroMontage from "@/components/HeroMontage";
@@ -21,6 +22,10 @@ const insurers = [
   "Aetna CVS",
   "My Blue Health",
 ];
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
@@ -59,7 +64,7 @@ export default function Home() {
             <Reveal delay={360}>
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["7a–7p", "Mon – Sat"],
+                  ["9a–5p", "Mon – Fri"],
                   ["Fast", "little-to-no wait"],
                   ["X-Ray", "& lab on site"],
                   ["All ages", "kids to seniors"],
@@ -148,8 +153,8 @@ export default function Home() {
               </h2>
               <p className="mt-6 leading-relaxed text-ink-soft">
                 One simple promise: fast, professional medical care without
-                the long waits — delivered by a patient-first team, six days
-                a week, right here in Ellis County.
+                the long waits — delivered by a patient-first team, right here
+                in Ellis County.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
@@ -341,7 +346,7 @@ export default function Home() {
                   Feeling bad? Don&apos;t wait it out.
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-ivory/80">
-                  Walk in today — Monday through Saturday, 7 AM to 7 PM.
+                  Walk in today — Monday through Friday, 9 AM to 5 PM.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                   <a

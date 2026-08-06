@@ -7,6 +7,7 @@ import { media } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Services",
+  alternates: { canonical: "/services" },
   description:
     "Walk-in urgent care, on-site X-ray and lab, family medicine, physicals, pediatric and women's health, and occupational medicine at Urgent Care of Ennis in Ennis, TX.",
 };
@@ -39,7 +40,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
               Illness, injuries, imaging, lab work, physicals, and workplace
-              medicine — walk in six days a week.
+              medicine — walk in Monday through Friday.
             </p>
           </Reveal>
         </div>
@@ -74,8 +75,8 @@ export default function ServicesPage() {
               <p className="mt-6 leading-relaxed text-ink-soft">
                 No pediatric appointment for days? We see children of all ages
                 for illness, injuries, school physicals, and vaccinations —
-                with gentle providers and evening-friendly hours, six days a
-                week.
+                with gentle providers and same-day availability during our
+                weekday hours.
               </p>
               <ul className="mt-6 grid gap-3">
                 {[
