@@ -48,18 +48,18 @@ export default function RootLayout({
     >
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      </head>
-      <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-BRRVBZ2TSP" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-BRRVBZ2TSP" strategy="beforeInteractive" />
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-BRRVBZ2TSP');`}
         </Script>
+      </head>
+      <body className="min-h-full flex flex-col">
+        <Nav />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
