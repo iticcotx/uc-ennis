@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Texas red / navy / ivory — matched to the brand logo */
+  /* Texas red / navy / ivory - matched to the brand logo */
   --ivory: #faf9f6;
   --ivory-soft: #f1efe9;
   --navy-950: #101f38;
@@ -122,3 +122,4 @@ a[class*="rounded-"]:active {
 .pulse-dot {
   animation: pulse-ring 1.8s ease-out infinite;
 }
+

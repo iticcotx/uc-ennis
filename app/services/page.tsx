@@ -41,7 +41,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
               Illness, injuries, imaging, lab work, physicals, and workplace
-              medicine â€” walk in Monday through Friday.
+              medicine - walk in Monday through Friday.
             </p>
           </Reveal>
         </div>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
               </h2>
               <p className="mt-6 leading-relaxed text-ivory/75">
                 From pre-employment physicals and drug screening to work injury
-                treatment and workers&apos; compensation care â€” we partner with
+                treatment and workers&apos; compensation care - we partner with
                 local businesses to get employees seen fast and back to work
                 safely.
               </p>
@@ -173,7 +173,7 @@ export default function ServicesPage() {
             <a href={site.phoneHref} className="font-bold text-red hover:underline">
               {site.phone}
             </a>{" "}
-            â€” if it&apos;s a life-threatening emergency, call 911 or go to the
+            - if it&apos;s a life-threatening emergency, call 911 or go to the
             nearest ER.
           </p>
         </Reveal>

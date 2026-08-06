@@ -22,7 +22,7 @@ export const conditions = [
 export const promises = [
   {
     title: "Walk-Ins Always Welcome",
-    text: "No appointment needed â€” ever. Walk in any day we're open and be seen quickly.",
+    text: "No appointment needed - ever. Walk in any day we're open and be seen quickly.",
   },
   {
     title: "Clear Next Steps",
@@ -34,7 +34,7 @@ export const promises = [
   },
   {
     title: "Everything Under One Roof",
-    text: "X-ray, lab, and treatment in one place â€” no running across town for answers.",
+    text: "X-ray, lab, and treatment in one place - no running across town for answers.",
   },
   {
     title: "Care for Every Age",

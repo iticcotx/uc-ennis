@@ -1,5 +1,5 @@
 // All footage is hotlinked from Pexels CDNs (free for commercial use, no
-// attribution required). Every slot on the site plays a DIFFERENT clip —
+// attribution required). Every slot on the site plays a DIFFERENT clip -
 // no video is used twice. Swap any clip for real clinic footage later.
 
 export type Video = { mp4: string; poster: string };
@@ -15,14 +15,14 @@ const adventist = (id: string) => `adventist-adventist-health-doctor-nurse-${id}
 const pp = (id: string) => `pexels-photo-${id}.jpeg`;
 
 export const media = {
-  // ── Hero montage (hero-only clips) ──────────────────────────
+  // â”€â”€ Hero montage (hero-only clips) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   heroMontage: [
     video("30141924", "12925508_1920_1080_30fps", adventist("30141924"), 1920), // nurse caring for patient
     video("6130037", "6130037-hd_1920_1080_30fps", pp("6130037"), 1920), // nurse tending patient bedside
     video("30141938", "12925561_1920_1080_24fps", adventist("30141938"), 1920), // doctor with smiling patient
   ],
 
-  // ── Section videos (each used exactly once) ─────────────────
+  // â”€â”€ Section videos (each used exactly once) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   teamVideo: video("30141965", "12925604_1920_1080_24fps", adventist("30141965"), 1920), // why-us: medical team
   ctaVideo: video("6130026", "6130026-hd_1920_1080_30fps", pp("6130026"), 1920), // home CTA: nurse checking patient
   servicesHeaderVideo: video("4214779", "4214779-hd_1920_1080_25fps", pp("4214779"), 1920), // services header: lab scientist
@@ -32,7 +32,7 @@ export const media = {
   aboutBandVideo: video("8375441", "8375441-hd_720_1366_25fps", pp("8375441"), 720), // about band: caring consult
   contactHeaderVideo: video("6998548", "6998548-hd_1080_1920_25fps", "cardiogram-clinic-diagnosis-doctor-6998548.jpeg", 1080), // contact: patient care
 
-  // ── Service card clips (24 unique) ──────────────────────────
+  // â”€â”€ Service card clips (24 unique) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   svcFever: video("3989331", "3989331-hd_1920_1080_30fps", pp("3989331")), // mom checking son's temperature
   svcThroat: video("7195603", "7195603-hd_1366_720_25fps", "adolescent-advice-beautiful-bed-7195603.jpeg"), // sick woman resting
   svcCut: video("5721605", "5721605-hd_1366_720_25fps", pp("5721605")), // bandaging a hand
@@ -60,3 +60,4 @@ export const media = {
   svcScreen: video("3735731", "3735731-hd_1920_1080_25fps", pp("3735731")), // lab sample analysis
   svcEmployer: video("6998092", "6998092-hd_1920_1080_25fps", pp("6998092")), // provider operating diagnostics
 };
+

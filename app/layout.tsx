@@ -20,14 +20,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.urgentcareofennis.com"),
-  icons: { icon: "/icon.svg", apple: "/icon.svg" },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   verification: { google: "YZVYzNamFR2DyiUewnofvAmYBduAC09nW-yRZ7puvn0" },
   title: {
-    default: `${site.name} â€” Walk-In Clinic & Urgent Care | Ennis, TX`,
+    default: `${site.name} - Walk-In Clinic & Urgent Care | Ennis, TX`,
     template: `%s | ${site.name}`,
   },
   description:
-    "Urgent Care of Ennis provides walk-in urgent care, family and pediatric care, on-site X-ray and lab services, physicals, and occupational medicine. Open Mondayâ€“Friday, 9 AMâ€“5 PM.",
+    "Urgent Care of Ennis provides walk-in urgent care, family and pediatric care, on-site X-ray and lab services, physicals, and occupational medicine. Open Monday-Friday, 9 AM-5 PM.",
 };
 
 const structuredData = {
@@ -54,6 +61,7 @@ export default function RootLayout({
       className={`${archivo.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
+        <meta charSet="utf-8" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-BRRVBZ2TSP" strategy="beforeInteractive" />
         <Script id="google-analytics" strategy="beforeInteractive">

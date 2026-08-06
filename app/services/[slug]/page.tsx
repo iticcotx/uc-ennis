@@ -17,7 +17,7 @@ const pages: ServicePage[] = [
     slug: "walk-in-urgent-care",
     name: "Walk-in urgent care",
     title: "Walk-In Urgent Care in Ennis, TX",
-    description: "Walk-in urgent care in Ennis, TX for common illnesses, minor injuries, testing, and care planning. Visit Mondayâ€“Friday, 9 AMâ€“5 PM.",
+    description: "Walk-in urgent care in Ennis, TX for common illnesses, minor injuries, testing, and care planning. Visit Monday-Friday, 9 AM-5 PM.",
     intro: "Urgent Care of Ennis provides weekday walk-in care for common illnesses and minor injuries when you need an evaluation outside a primary-care appointment.",
     sections: [
       { heading: "Conditions we commonly evaluate", body: "Our existing clinic information describes care for conditions such as fever, cough, sore throat, ear and sinus concerns, stomach symptoms, rashes, minor burns, cuts, sprains, and other non-life-threatening concerns." },
@@ -28,7 +28,7 @@ const pages: ServicePage[] = [
     slug: "x-ray-lab",
     name: "On-site X-ray and lab",
     title: "On-Site X-Ray and Lab Services in Ennis, TX",
-    description: "On-site X-ray and lab services in Ennis, TX for urgent-care evaluations. Call or walk in Mondayâ€“Friday, 9 AMâ€“5 PM.",
+    description: "On-site X-ray and lab services in Ennis, TX for urgent-care evaluations. Call or walk in Monday-Friday, 9 AM-5 PM.",
     intro: "On-site X-ray and lab capabilities can support an urgent-care evaluation in one location. The provider will determine which testing is appropriate for your concern.",
     sections: [
       { heading: "Testing available at the clinic", body: "The existing site describes on-site X-ray and lab services, including rapid testing. Availability and clinical suitability depend on the visit and the providerâ€™s evaluation." },
@@ -39,7 +39,7 @@ const pages: ServicePage[] = [
     slug: "pediatric-family-urgent-care",
     name: "Pediatric and family urgent care",
     title: "Pediatric and Family Urgent Care in Ennis, TX",
-    description: "Pediatric and family urgent care in Ennis, TX for children and adults. Walk in Mondayâ€“Friday, 9 AMâ€“5 PM, or call for questions.",
+    description: "Pediatric and family urgent care in Ennis, TX for children and adults. Walk in Monday-Friday, 9 AM-5 PM, or call for questions.",
     intro: "Urgent Care of Ennis serves patients of all ages for weekday urgent-care needs, with family-focused visits for common illnesses, minor injuries, and school-related documentation.",
     sections: [
       { heading: "Family-focused visits", body: "The current site describes care for children and adults, including pediatric illness and injury care, school physicals, and common respiratory, skin, and minor-injury concerns." },
@@ -50,7 +50,7 @@ const pages: ServicePage[] = [
     slug: "physicals",
     name: "School, sports, and work physicals",
     title: "School, Sports, and Work Physicals in Ennis, TX",
-    description: "School, sports, and work physicals in Ennis, TX. Visit Urgent Care of Ennis Mondayâ€“Friday, 9 AMâ€“5 PM for forms and evaluations.",
+    description: "School, sports, and work physicals in Ennis, TX. Visit Urgent Care of Ennis Monday-Friday, 9 AM-5 PM for forms and evaluations.",
     intro: "Urgent Care of Ennis provides physical evaluations described on the existing site for school, sports, and work needs during published weekday hours.",
     sections: [
       { heading: "Bring your forms", body: "Bring the required school, sports, employer, or occupational forms and any documentation requested by the organization. Requirements vary, so call ahead if you have questions." },
@@ -61,7 +61,7 @@ const pages: ServicePage[] = [
     slug: "occupational-medicine",
     name: "Occupational medicine and workersâ€™ compensation",
     title: "Occupational Medicine in Ennis, TX",
-    description: "Occupational medicine and workersâ€™ compensation care in Ennis, TX, including work-injury evaluation and physicals. Open weekdays 9 AMâ€“5 PM.",
+    description: "Occupational medicine and workersâ€™ compensation care in Ennis, TX, including work-injury evaluation and physicals. Open weekdays 9 AM-5 PM.",
     intro: "The clinicâ€™s existing services information describes occupational medicine, work-injury care, workersâ€™ compensation documentation, screening, and work physicals.",
     sections: [
       { heading: "Employer and employee services", body: "Services described on the current site include work-injury evaluation, workersâ€™ compensation documentation, pre-employment physicals, drug screening, and return-to-work evaluations when appropriate." },
