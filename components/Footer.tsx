@@ -70,7 +70,7 @@ export default function Footer() {
         <div className="red-rule mt-14 opacity-40" />
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-ivory/50 sm:flex-row">
           <p>
-            Â© {new Date().getFullYear()} {site.fullName}. All rights reserved.
+                 (c) {new Date().getFullYear()} {site.fullName}. All rights reserved.
           </p>
           <p>If this is a medical emergency, call 911.</p>
         </div>

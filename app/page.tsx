@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* â”€â”€ Hero: split layout with live status card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        Hero: split layout with live status card     "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <HeroMontage clips={media.heroMontage} className="absolute inset-0" />
         <div
@@ -87,14 +87,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ Trust strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        Trust strip     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="border-y-2 border-navy-950 bg-red">
         <div className="mx-auto grid max-w-6xl grid-cols-2 divide-ivory/20 px-5 py-4 text-ivory sm:grid-cols-4 sm:divide-x lg:px-8">
           {[
-            ["âœš", "Walk-ins welcome"],
-            ["âœš", "On-site X-ray & lab"],
-            ["âœš", "Most insurance accepted"],
-            ["âœš", "Weekday walk-ins"],
+            ["             ", "Walk-ins welcome"],
+            ["             ", "On-site X-ray & lab"],
+            ["             ", "Most insurance accepted"],
+            ["             ", "Weekday walk-ins"],
           ].map(([mark, label]) => (
             <p key={label} className="flex items-center justify-center gap-2 px-2 py-1 text-center text-xs font-bold uppercase tracking-wide sm:text-sm">
               <span aria-hidden="true" className="text-ivory/60">{mark}</span>
@@ -104,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ How it works â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        How it works     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
@@ -135,12 +135,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ Services: pinned flip deck with zoom popups â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        Services: pinned flip deck with zoom popups     "           "           "           "           "           "           "           "        */}
       <section>
         <ServiceGrid />
       </section>
 
-      {/* â”€â”€ Why us â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        Why us     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="py-24">
         <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-2">
@@ -184,7 +184,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ Insurance & pricing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        Insurance & pricing     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section id="insurance" className="py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
@@ -257,7 +257,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ Map / find us â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        Map / find us     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="bg-ivory-soft py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
@@ -311,7 +311,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        FAQ     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="py-24">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>
@@ -330,7 +330,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â”€â”€ CTA band â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/*     "           "        CTA band     "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "           "        */}
       <section className="pb-24 bg-ivory">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
           <Reveal>

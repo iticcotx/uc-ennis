@@ -47,7 +47,7 @@ export default function StatusCard() {
             className={`h-2 w-2 rounded-full ${open ? "pulse-dot bg-green-400" : "bg-ivory/50"}`}
             aria-hidden="true"
           />
-          {status ? (open ? "Open now" : "Closed") : "â€¦"}
+          {status ? (open ? "Open now" : "Closed") : "..."}
         </span>
       </div>
 
@@ -78,7 +78,7 @@ export default function StatusCard() {
           rel="noopener noreferrer"
           className="rounded-xl border border-ivory/25 px-5 py-3 text-center text-sm font-semibold text-ivory transition-colors hover:border-sky hover:text-sky"
         >
-          Get Directions â†’
+          Get Directions
         </a>
       </div>
 
