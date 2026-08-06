@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Contact and Directions to Our Ennis Walk-In Clinic",
   alternates: { canonical: "/contact" },
   description:
-    "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Mondayâ€“Friday, 9 AMâ€“5 PM. Call (469) 940-3431.",
+    "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Monday-Friday, 9 AM-5 PM. Call (469) 940-3431.",
 };
 
 export default function ContactPage() {
@@ -60,7 +60,7 @@ export default function ContactPage() {
         <Reveal>
           <div className="relative overflow-hidden rounded-2xl border-2 border-navy-900/10 shadow-xl">
             <iframe
-              title="Map to Urgent Care of Ennis â€” 108 Chamber of Commerce Dr, Ennis, TX 75119"
+              title="Map to Urgent Care of Ennis - 108 Chamber of Commerce Dr, Ennis, TX 75119"
               src="https://www.google.com/maps?q=108+Chamber+of+Commerce+Dr+Ennis+TX+75119&output=embed"
               className="h-130 w-full border-0"
               loading="lazy"
@@ -73,7 +73,7 @@ export default function ContactPage() {
           {[
             ["Address", `${site.address.line1}, ${site.address.line2}`, site.address.mapsUrl],
             ["Phone", site.phone, site.phoneHref],
-            ["Hours", `${site.hoursShort[0]}, ${site.hoursShort[1]} Â· Closed Sunday`, null],
+            ["Hours", `${site.hoursShort[0]}, ${site.hoursShort[1]} | Closed Sunday`, null],
           ].map(([label, value, href]) => (
             <Reveal key={label as string}>
               <div className="h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-6">
