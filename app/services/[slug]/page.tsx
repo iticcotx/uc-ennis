@@ -31,7 +31,7 @@ const pages: ServicePage[] = [
     description: "On-site X-ray and lab services in Ennis, TX for urgent-care evaluations. Call or walk in Monday-Friday, 9 AM-5 PM.",
     intro: "On-site X-ray and lab capabilities can support an urgent-care evaluation in one location. The provider will determine which testing is appropriate for your concern.",
     sections: [
-      { heading: "Testing available at the clinic", body: "The existing site describes on-site X-ray and lab services, including rapid testing. Availability and clinical suitability depend on the visit and the providerâ€™s evaluation." },
+      { heading: "Testing available at the clinic", body: "The existing site describes on-site X-ray and lab services, including rapid testing. Availability and clinical suitability depend on the visit and the provider                  s evaluation." },
       { heading: "When to seek emergency care", body: "For a life-threatening emergency, call 911 or go to the nearest emergency room. Urgent Care of Ennis is for non-life-threatening concerns during published clinic hours." },
     ],
   },
@@ -43,7 +43,7 @@ const pages: ServicePage[] = [
     intro: "Urgent Care of Ennis serves patients of all ages for weekday urgent-care needs, with family-focused visits for common illnesses, minor injuries, and school-related documentation.",
     sections: [
       { heading: "Family-focused visits", body: "The current site describes care for children and adults, including pediatric illness and injury care, school physicals, and common respiratory, skin, and minor-injury concerns." },
-      { heading: "Before you visit", body: "Bring identification and any relevant insurance or medical information. Call the clinic if you are unsure whether your childâ€™s concern is appropriate for urgent care." },
+      { heading: "Before you visit", body: "Bring identification and any relevant insurance or medical information. Call the clinic if you are unsure whether your child                  s concern is appropriate for urgent care." },
     ],
   },
   {
@@ -59,13 +59,13 @@ const pages: ServicePage[] = [
   },
   {
     slug: "occupational-medicine",
-    name: "Occupational medicine and workersâ€™ compensation",
+    name: "Occupational medicine and workers                   compensation",
     title: "Occupational Medicine in Ennis, TX",
-    description: "Occupational medicine and workersâ€™ compensation care in Ennis, TX, including work-injury evaluation and physicals. Open weekdays 9 AM-5 PM.",
-    intro: "The clinicâ€™s existing services information describes occupational medicine, work-injury care, workersâ€™ compensation documentation, screening, and work physicals.",
+    description: "Occupational medicine and workers                   compensation care in Ennis, TX, including work-injury evaluation and physicals. Open weekdays 9 AM-5 PM.",
+    intro: "The clinic                  s existing services information describes occupational medicine, work-injury care, workers                   compensation documentation, screening, and work physicals.",
     sections: [
-      { heading: "Employer and employee services", body: "Services described on the current site include work-injury evaluation, workersâ€™ compensation documentation, pre-employment physicals, drug screening, and return-to-work evaluations when appropriate." },
-      { heading: "Coordinate with your employer", body: "Bring employer instructions, claim information, and any required forms. Requirements and authorization can vary by employer and workersâ€™ compensation carrier." },
+      { heading: "Employer and employee services", body: "Services described on the current site include work-injury evaluation, workers                   compensation documentation, pre-employment physicals, drug screening, and return-to-work evaluations when appropriate." },
+      { heading: "Coordinate with your employer", body: "Bring employer instructions, claim information, and any required forms. Requirements and authorization can vary by employer and workers                   compensation carrier." },
     ],
   },
 ];
