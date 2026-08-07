@@ -3,7 +3,10 @@
 import { useEffect } from "react";
 
 declare global {
-  interface Window { gtag?: (...args: unknown[]) => void; }
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
 }
 
 export default function AnalyticsTracker() {
@@ -11,7 +14,19 @@ export default function AnalyticsTracker() {
     const onClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
       const link = target?.closest("a") as HTMLAnchorElement | null;
-      if (!link || !window.gtag) return;
+      if (!link) return;
+
+      const sendEvent = (name: string, parameters: Record<string, unknown>) => {
+        if (window.gtag) {
+          window.gtag("event", name, parameters);
+          return;
+        }
+
+        // Keep the event in the existing GA4 queue if gtag is still loading.
+        // This does not create another tag or configuration.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(["event", name, parameters]);
+      };
 
       const linkUrl = link.href;
       const common = {
@@ -22,7 +37,7 @@ export default function AnalyticsTracker() {
       };
 
       if (linkUrl.startsWith("tel:")) {
-        window.gtag("event", "phone_call_click", {
+        sendEvent("phone_call_click", {
           ...common,
           phone_number: "+14699403431",
         });
@@ -43,7 +58,7 @@ export default function AnalyticsTracker() {
           const opensNewTab = link.target === "_blank";
 
           if (!isUnmodifiedLeftClick || opensNewTab) {
-            window.gtag("event", "get_directions_click", common);
+            sendEvent("get_directions_click", common);
             return;
           }
 
@@ -55,7 +70,7 @@ export default function AnalyticsTracker() {
           };
 
           event.preventDefault();
-          window.gtag("event", "get_directions_click", {
+          sendEvent("get_directions_click", {
             ...common,
             transport_type: "beacon",
             event_callback: navigate,
