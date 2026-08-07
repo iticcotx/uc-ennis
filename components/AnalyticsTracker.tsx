@@ -34,7 +34,34 @@ export default function AnalyticsTracker() {
           (hostname.endsWith(".google.com") && url.pathname.startsWith("/maps"));
 
         if (isGoogleMaps) {
-        window.gtag("event", "get_directions_click", common);
+          const isUnmodifiedLeftClick =
+            event.button === 0 &&
+            !event.ctrlKey &&
+            !event.metaKey &&
+            !event.shiftKey &&
+            !event.altKey;
+          const opensNewTab = link.target === "_blank";
+
+          if (!isUnmodifiedLeftClick || opensNewTab) {
+            window.gtag("event", "get_directions_click", common);
+            return;
+          }
+
+          let navigated = false;
+          const navigate = () => {
+            if (navigated) return;
+            navigated = true;
+            window.location.assign(link.href);
+          };
+
+          event.preventDefault();
+          window.gtag("event", "get_directions_click", {
+            ...common,
+            transport_type: "beacon",
+            event_callback: navigate,
+            event_timeout: 1000,
+          });
+          window.setTimeout(navigate, 1200);
         }
       }
     };
@@ -43,4 +70,3 @@ export default function AnalyticsTracker() {
   }, []);
   return null;
 }
-
