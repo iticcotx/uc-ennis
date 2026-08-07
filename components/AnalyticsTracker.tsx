@@ -12,10 +12,22 @@ export default function AnalyticsTracker() {
       const target = event.target as HTMLElement | null;
       const link = target?.closest("a") as HTMLAnchorElement | null;
       if (!link || !window.gtag) return;
-      if (link.href.startsWith("tel:")) {
-        window.gtag("event", "phone_link_click", { link_url: link.href, page_path: window.location.pathname });
-      } else if (link.href.includes("google.com/maps")) {
-        window.gtag("event", "directions_click", { link_url: link.href, page_path: window.location.pathname });
+
+      const linkUrl = link.href;
+      const common = {
+        link_url: linkUrl,
+        link_text: (link.textContent || "").trim().replace(/\s+/g, " ").slice(0, 100),
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+      };
+
+      if (linkUrl.startsWith("tel:")) {
+        window.gtag("event", "phone_call_click", {
+          ...common,
+          phone_number: "+14699403431",
+        });
+      } else if (/google\.(com|[a-z.]+)\/maps/i.test(linkUrl)) {
+        window.gtag("event", "get_directions_click", common);
       }
     };
     document.addEventListener("click", onClick);
@@ -23,4 +35,3 @@ export default function AnalyticsTracker() {
   }, []);
   return null;
 }
-
