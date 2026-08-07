@@ -26,8 +26,16 @@ export default function AnalyticsTracker() {
           ...common,
           phone_number: "+14699403431",
         });
-      } else if (/google\.(com|[a-z.]+)\/maps/i.test(linkUrl)) {
+      } else {
+        const url = new URL(linkUrl, window.location.href);
+        const hostname = url.hostname.toLowerCase();
+        const isGoogleMaps =
+          hostname === "maps.google.com" ||
+          (hostname.endsWith(".google.com") && url.pathname.startsWith("/maps"));
+
+        if (isGoogleMaps) {
         window.gtag("event", "get_directions_click", common);
+        }
       }
     };
     document.addEventListener("click", onClick);
@@ -35,3 +43,4 @@ export default function AnalyticsTracker() {
   }, []);
   return null;
 }
+
