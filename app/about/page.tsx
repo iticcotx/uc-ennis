@@ -11,7 +11,7 @@ import { media } from "@/lib/media";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Urgent Care of Ennis brings fast, professional, walk-in medical care to Ennis and Ellis County, TX — on-site X-ray and lab, five days a week.",
+    "Urgent Care of Ennis brings fast, professional, walk-in medical care to Ennis and Ellis County, TX — on-site X-ray and lab, six days a week.",
 };
 
 export default function AboutPage() {

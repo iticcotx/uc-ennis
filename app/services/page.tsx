@@ -39,7 +39,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
               Illness, injuries, imaging, lab work, physicals, and workplace
-              medicine — walk in five days a week.
+              medicine — walk in six days a week.
             </p>
           </Reveal>
         </div>

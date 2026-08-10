@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 const faqs = [
   {
     q: "Do I need an appointment?",
-    a: "No — we're a true walk-in clinic. Come in any time Monday through Friday, 9 AM to 5 PM, and we'll get you seen quickly. You can also call ahead if you'd like us to expect you.",
+    a: "No — we're a true walk-in clinic. Come in any time Monday through Saturday, 7 AM to 7 PM, and we'll get you seen quickly. You can also call ahead if you'd like us to expect you.",
   },
   {
     q: "Do you take my insurance?",

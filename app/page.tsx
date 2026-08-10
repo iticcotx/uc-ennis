@@ -60,7 +60,7 @@ export default function Home() {
             <Reveal delay={360}>
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["9 AM – 5 PM", "Mon – Fri"],
+                  ["7 AM – 7 PM", "Mon – Sat"],
                   ["Fast", "little-to-no wait"],
                   ["X-Ray", "& lab on site"],
                   ["All ages", "kids to seniors"],
@@ -135,7 +135,7 @@ export default function Home() {
                 Built for Ennis. Ready every day.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-                Fast, professional care without the long waits — five days a week,
+                Fast, professional care without the long waits — six days a week,
                 right here in Ellis County.
               </p>
             </div>
@@ -315,7 +315,7 @@ export default function Home() {
                   Feeling bad? Don&apos;t wait it out.
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-ivory/80">
-                  Walk in today — Monday through Friday, 9 AM to 5 PM.
+                  Walk in today — Monday through Saturday, 7 AM to 7 PM.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                   <a

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Urgent Care of Ennis — walk-in urgent care, family medicine, on-site X-ray and lab, pediatric care, and occupational medicine in Ennis, TX. Open Monday–Friday, 9 AM–5 PM. Little-to-no wait times.",
+    "Urgent Care of Ennis — walk-in urgent care, family medicine, on-site X-ray and lab, pediatric care, and occupational medicine in Ennis, TX. Open Monday–Saturday, 7 AM–7 PM. Little-to-no wait times.",
 };
 
 export default function RootLayout({
