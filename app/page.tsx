@@ -10,6 +10,7 @@ import { media } from "@/lib/media";
 
 const insurers = [
   "Medicare",
+  "Medicaid",
   "Aetna",
   "Cigna",
   "UnitedHealthcare",
