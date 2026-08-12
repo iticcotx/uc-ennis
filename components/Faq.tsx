@@ -7,15 +7,15 @@ const faqs = [
   },
   {
     q: "Do you take my insurance?",
-    a: "We accept most major insurance plans. Affordable self-pay options are also available — call us and we'll confirm your coverage before you come in.",
+    a: "We accept most major insurance plans. Affordable self-pay options are also available - call us and we'll confirm your coverage before you come in.",
   },
   {
     q: "When should I go to the ER instead?",
-    a: "For life-threatening emergencies — chest pain, stroke symptoms, severe bleeding, or difficulty breathing — call 911 or go to the nearest emergency room. For everything else, we can usually treat you faster and at a fraction of the cost.",
+    a: "For life-threatening emergencies - chest pain, stroke symptoms, severe bleeding, or difficulty breathing - call 911 or go to the nearest emergency room. For everything else, we can usually treat you faster and at a fraction of the cost.",
   },
   {
     q: "Can you do X-rays and lab work on site?",
-    a: "Yes. We have digital X-ray and a laboratory in the clinic, so fractures, infections, flu, strep, and COVID can be diagnosed during your visit — no second trip needed.",
+    a: "Yes. We have digital X-ray and a laboratory in the clinic, so fractures, infections, flu, strep, and COVID can be diagnosed during your visit - no second trip needed.",
   },
   {
     q: "Do you see children?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Do you handle work injuries and workers' comp?",
-    a: `Yes — we provide occupational medicine including work injury treatment, workers' compensation visits, pre-employment physicals, and drug screening. Employers can call ${site.phone} to set up an account.`,
+    a: `Yes - we provide occupational medicine including work injury treatment, workers' compensation visits, pre-employment physicals, and drug screening. Employers can call ${site.phone} to set up an account.`,
   },
 ];
 
@@ -54,3 +54,4 @@ export default function Faq() {
     </div>
   );
 }
+

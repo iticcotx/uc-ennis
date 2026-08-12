@@ -4,9 +4,11 @@ import AutoVideo from "@/components/AutoVideo";
 import StatusCard from "@/components/StatusCard";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
+import ContactVisitTracker from "@/components/ContactVisitTracker";
 
 export const metadata: Metadata = {
   title: "Contact & Directions",
+  alternates: { canonical: "/contact" },
   description:
     "Visit Urgent Care of Ennis at 108 Chamber of Commerce Dr, Ennis, TX 75119. Walk-ins welcome Monday–Saturday, 7 AM–7 PM. Call (469) 940-3431.",
 };
@@ -14,6 +16,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <ContactVisitTracker />
       <section className="relative overflow-hidden bg-navy-950 text-ivory">
         <AutoVideo
           className="absolute inset-0 h-full w-full object-cover"
