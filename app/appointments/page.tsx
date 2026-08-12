@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import AutoVideo from "@/components/AutoVideo";
-import StatusCard from "@/components/StatusCard";
 import AppointmentForm from "@/components/AppointmentForm";
+import StepTimeline from "@/components/StepTimeline";
 import { site } from "@/lib/site";
 import { media } from "@/lib/media";
 
@@ -49,28 +49,23 @@ export default function AppointmentsPage() {
               "linear-gradient(105deg, rgba(16,31,56,0.97) 0%, rgba(16,31,56,0.88) 50%, rgba(16,31,56,0.65) 100%)",
           }}
         />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-32 lg:grid-cols-[1.25fr_1fr] lg:px-8 lg:pt-40">
-          <div>
-            <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
-                Appointments
-              </p>
-              <h1 className="font-display mt-4 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
-                Book your visit online.
-              </h1>
-              <p className="mt-6 max-w-xl leading-relaxed text-ivory/80">
-                Pick a day and time that suits you and our front desk will call
-                to confirm. Walk-ins are always welcome — an appointment simply
-                means we&apos;re expecting you.
-              </p>
-              <p className="mt-6 inline-block rounded-xl bg-red/20 px-5 py-3 text-sm leading-relaxed text-ivory/90 backdrop-blur-sm">
-                If this is a medical emergency, call 911 or go to the nearest
-                emergency room.
-              </p>
-            </Reveal>
-          </div>
-          <Reveal delay={200} className="justify-self-center lg:justify-self-end">
-            <StatusCard />
+        <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-32 text-center lg:px-8 lg:pt-40">
+          <Reveal>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-sky">
+              Appointments
+            </p>
+            <h1 className="font-display mx-auto mt-4 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
+              Book your visit online.
+            </h1>
+            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ivory/80">
+              Pick a day and time that suits you and our front desk will call to
+              confirm. Walk-ins are always welcome — an appointment simply means
+              we&apos;re expecting you.
+            </p>
+            <p className="mx-auto mt-6 inline-block rounded-xl bg-red/20 px-5 py-3 text-sm leading-relaxed text-ivory/90 backdrop-blur-sm">
+              If this is a medical emergency, call 911 or go to the nearest
+              emergency room.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -78,20 +73,16 @@ export default function AppointmentsPage() {
       {/* ── Three steps ──────────────────────────────────────── */}
       <section className="bg-ivory-soft py-20">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="grid gap-4 sm:grid-cols-3">
-            {steps.map((s, i) => (
-              <Reveal key={s.n} delay={i * 110} className="h-full">
-                <div className="flex h-full flex-col gap-3 rounded-2xl border-2 border-navy-900/10 bg-white/70 p-7">
-                  <span className="font-display flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-lg font-black text-ivory">
-                    {s.n}
-                  </span>
-                  <p className="font-display text-lg font-bold text-navy-900">
-                    {s.title}
-                  </p>
-                  <p className="text-sm leading-relaxed text-ink-soft">{s.text}</p>
-                </div>
-              </Reveal>
-            ))}
+          <Reveal className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              How It Works
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              Three steps, start to finish.
+            </h2>
+          </Reveal>
+          <div className="mt-12">
+            <StepTimeline steps={steps} />
           </div>
         </div>
       </section>

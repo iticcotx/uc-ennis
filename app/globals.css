@@ -115,6 +115,88 @@ a[class*="rounded-"]:active {
   background: linear-gradient(90deg, transparent, var(--red) 30%, var(--red) 70%, transparent);
 }
 
+/* ── Appointments step timeline ─────────────────────────────
+   Nodes pop in along a line that draws itself once the strip is
+   in view, then the active step cycles on its own. */
+.tl-node,
+.tl-card {
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    background-color 0.5s ease;
+}
+.tl-node {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.tl-card {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.tl-in .tl-node {
+  opacity: 1;
+  transform: scale(1);
+}
+.tl-in .tl-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tl-in .tl-card-active {
+  transform: translateY(-6px);
+}
+
+/* The connecting line draws across (desktop) or down (mobile) */
+.tl-fill {
+  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.tl-in .tl-fill {
+  transform: scaleX(1);
+}
+.tl-fill-v {
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+.tl-in .tl-fill-v {
+  transform: scaleY(1);
+}
+
+@keyframes tl-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(179, 40, 45, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(179, 40, 45, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(179, 40, 45, 0);
+  }
+}
+.tl-node-active {
+  animation: tl-pulse 2.2s ease-out infinite;
+}
+
+/* Reduced motion: show the finished state, hold still */
+@media (prefers-reduced-motion: reduce) {
+  .tl-node,
+  .tl-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .tl-fill,
+  .tl-fill-v {
+    transform: none !important;
+    transition: none !important;
+  }
+  .tl-node-active {
+    animation: none;
+  }
+}
+
 /* Pulsing live-status dot */
 @keyframes pulse-ring {
   0% {
