@@ -68,9 +68,14 @@ export default function Home() {
                 ].map(([big, small]) => (
                   <div
                     key={big}
-                    className="rounded-xl border border-ivory/15 bg-ivory/5 px-4 py-3 backdrop-blur-sm"
+                    className="rounded-xl border border-ivory/15 bg-ivory/5 px-3.5 py-3 backdrop-blur-sm"
                   >
-                    <p className="font-display text-xl font-bold text-sky">{big}</p>
+                    {/* Sized to keep "7 AM – 7 PM" on one line: above sm the grid
+                        is 4 columns inside a max-w-xl cap, so each chip only has
+                        ~107px of room — text-xl overflows it. */}
+                    <p className="font-display whitespace-nowrap text-lg font-bold text-sky">
+                      {big}
+                    </p>
                     <p className="mt-0.5 text-xs text-ivory/70">{small}</p>
                   </div>
                 ))}
