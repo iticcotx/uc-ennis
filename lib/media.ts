@@ -33,6 +33,7 @@ export const media = {
   aboutHeaderVideo: video("6686962", "6686962-sd_640_360_25fps", pp("6686962"), 1280), // about header: medic with patient
   aboutBandVideo: video("8375441", "8375441-sd_506_960_25fps", pp("8375441"), 720), // about band: caring consult
   contactHeaderVideo: video("6998548", "6998548-sd_540_960_25fps", "cardiogram-clinic-diagnosis-doctor-6998548.jpeg", 720), // contact: patient care
+  appointmentsHeaderVideo: video("8375758", "8375758-sd_640_338_25fps", "adult-communication-connection-consultation-8375758.jpeg", 1280), // appointments: parent & child consult
 
   // ── Service card clips (24 unique) ──────────────────────────
   svcFever: video("3989331", "3989331-hd_1920_1080_30fps", pp("3989331")), // mom checking son's temperature
@@ -56,7 +57,6 @@ export const media = {
   svcXray: video("7705202", "7705202-hd_1920_1080_25fps", "healthcare-and-medicine-medic-medical-equipment-medical-practitioner-7705202.jpeg"), // imaging equipment in use
   svcLab: video("8381266", "8381266-hd_720_1280_25fps", pp("8381266"), 720), // test tubes in analyzer
   svcVaccine: video("8413524", "8413524-hd_1920_1080_25fps", "abdomen-adult-aid-blood-8413524.jpeg"), // vaccine being administered
-  svcSchool: video("8375758", "8375758-hd_1366_720_25fps", "adult-communication-connection-consultation-8375758.jpeg"), // parent & child consult
   svcWomens: video("5858754", "5858754-hd_1366_720_25fps", pp("5858754")), // woman monitoring her health
   svcPeds: video("8375759", "8375759-hd_1366_720_25fps", pp("8375759")), // mother taking child's temperature
   svcScreen: video("3735731", "3735731-hd_1920_1080_25fps", pp("3735731")), // lab sample analysis

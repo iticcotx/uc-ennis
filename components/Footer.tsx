@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/70">
               Walk-in urgent care, family medicine, and on-site X-ray &amp; lab
-              for Ennis and Ellis County - quality treatment at a fraction of
+              for Ennis and Ellis County — quality treatment at a fraction of
               emergency room cost, right here in Ennis.
             </p>
           </div>
@@ -35,6 +35,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-ivory/80">
               <li><Link href="/" className="transition-colors hover:text-sky">Home</Link></li>
               <li><Link href="/services" className="transition-colors hover:text-sky">Services</Link></li>
+              <li><Link href="/appointments" className="transition-colors hover:text-sky">Appointments</Link></li>
               <li><Link href="/about" className="transition-colors hover:text-sky">About Us</Link></li>
               <li><Link href="/contact" className="transition-colors hover:text-sky">Contact &amp; Directions</Link></li>
             </ul>
@@ -70,7 +71,7 @@ export default function Footer() {
         <div className="red-rule mt-14 opacity-40" />
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-ivory/50 sm:flex-row">
           <p>
-                 (c) {new Date().getFullYear()} {site.fullName}. All rights reserved.
+            © {new Date().getFullYear()} {site.fullName}. All rights reserved.
           </p>
           <p>If this is a medical emergency, call 911.</p>
         </div>
