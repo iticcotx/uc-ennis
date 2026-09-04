@@ -214,13 +214,6 @@ export default function Home() {
                     <p className="font-display mt-1 text-4xl font-black">$150</p>
                     <p className="mt-1 text-xs text-ivory/60">Full evaluation & treatment</p>
                   </div>
-                  <div className="rounded-xl border border-ivory/15 bg-ivory/5 p-5">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">
-                      Follow-up visit
-                    </p>
-                    <p className="font-display mt-1 text-4xl font-black">$80</p>
-                    <p className="mt-1 text-xs text-ivory/60">Follow-up & ongoing care</p>
-                  </div>
                 </div>
                 <p className="mt-auto pt-5 text-[11px] leading-relaxed text-ivory/50">
                   Additional services like X-ray, labs, or procedures may have
