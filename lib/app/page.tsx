@@ -1,0 +1,347 @@
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
+import AutoVideo from "@/components/AutoVideo";
+import HeroMontage from "@/components/HeroMontage";
+import StatusCard from "@/components/StatusCard";
+import CoverflowCarousel from "@/components/CoverflowCarousel";
+import VideoCoverflow from "@/components/VideoCoverflow";
+import Faq from "@/components/Faq";
+import { site } from "@/lib/site";
+import { media } from "@/lib/media";
+
+const insurers = [
+  "Medicare",
+  "Medicaid",
+  "Aetna",
+  "Cigna",
+  "UnitedHealthcare",
+  "BCBS Texas",
+  "Humana",
+  "Superior / Ambetter",
+  "Baylor Scott & White",
+  "Multiplan / PHCS",
+  "Meridian",
+  "Aetna CVS",
+  "My Blue Health",
+];
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+export default function Home() {
+  return (
+    <>
+      {/* ── Hero: split layout with live status card ─────────── */}
+      <section className="relative overflow-hidden bg-navy-950 text-ivory">
+        <HeroMontage clips={media.heroMontage} className="absolute inset-0" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(105deg, rgba(16,31,56,0.97) 0%, rgba(16,31,56,0.88) 55%, rgba(16,31,56,0.62) 100%)",
+          }}
+        />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-32 lg:grid-cols-[1.25fr_1fr] lg:px-8 lg:pb-24 lg:pt-40">
+          <div>
+            <Reveal>
+              <p className="inline-flex items-center gap-2 rounded-lg bg-red px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-ivory">
+                <span className="h-1.5 w-1.5 rounded-full bg-ivory" aria-hidden="true" />
+                Now open in Ennis — walk-ins welcome
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <h1 className="font-display mt-6 max-w-2xl text-4xl font-black leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.6rem]">
+                Urgent care,{" "}
+                <span className="text-sky">without the wait.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={240}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ivory/85">
+                Illness, injuries, X-ray, and lab — treated the same day for
+                the whole family, at a fraction of emergency room cost.
+              </p>
+            </Reveal>
+            <Reveal delay={360}>
+              <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+                {[
+                  ["7 AM – 7 PM", "Mon – Sat"],
+                  ["Fast", "little-to-no wait"],
+                  ["X-Ray", "& lab on site"],
+                  ["All ages", "kids to seniors"],
+                ].map(([big, small]) => (
+                  <div
+                    key={big}
+                    className="rounded-xl border border-ivory/15 bg-ivory/5 px-3.5 py-3 backdrop-blur-sm"
+                  >
+                    {/* Sized to keep "7 AM – 7 PM" on one line: above sm the grid
+                        is 4 columns inside a max-w-xl cap, so each chip only has
+                        ~107px of room — text-xl overflows it. */}
+                    <p className="font-display whitespace-nowrap text-lg font-bold text-sky">
+                      {big}
+                    </p>
+                    <p className="mt-0.5 text-xs text-ivory/70">{small}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={200} className="justify-self-center lg:justify-self-end">
+            <StatusCard />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Trust strip ──────────────────────────────────────── */}
+      <section className="border-y-2 border-navy-950 bg-red">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 divide-ivory/20 px-5 py-4 text-ivory sm:grid-cols-4 sm:divide-x lg:px-8">
+          {[
+            ["✚", "Walk-ins welcome"],
+            ["✚", "On-site X-ray & lab"],
+            ["✚", "Most insurance accepted"],
+            ["✚", "Little-to-no wait"],
+          ].map(([mark, label]) => (
+            <p key={label} className="flex items-center justify-center gap-2 px-2 py-1 text-center text-xs font-bold uppercase tracking-wide sm:text-sm">
+              <span aria-hidden="true" className="text-ivory/60">{mark}</span>
+              {label}
+            </p>
+          ))}
+        </div>
+      </section>
+
+      {/* ── How it works (auto coverflow carousel) ───────────── */}
+      <section className="mx-auto max-w-6xl px-5 py-24 lg:px-8">
+        <Reveal>
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              How It Works
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              Three steps to feeling better.
+            </h2>
+          </div>
+        </Reveal>
+        <div className="mt-12">
+          <CoverflowCarousel
+            items={[
+              { title: "Walk in or call", text: "Come in any day Monday through Saturday — no appointment needed. Call ahead if you'd like us to expect you." },
+              { title: "Get seen fast", text: "A provider evaluates you quickly, with on-site X-ray and lab for same-visit answers." },
+              { title: "Leave feeling better", text: "Treatment, prescriptions, and a clear care plan — all in one visit." },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* ── Why us (video coverflow carousel) ────────────────── */}
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <div className="text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+                Why Urgent Care of Ennis
+              </p>
+              <h2 className="font-display mt-3 text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+                Built for Ennis. Ready every day.
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+                Fast, professional care without the long waits — six days a week,
+                right here in Ellis County.
+              </p>
+            </div>
+          </Reveal>
+          <div className="mt-12">
+            <VideoCoverflow
+              items={[
+                { title: "Board-certified providers", text: "Experienced clinicians who listen, diagnose, and treat you right the first time.", video: media.teamVideo, alt: "A medical care team in a hospital hallway" },
+                { title: "Everything in one visit", text: "Exam, on-site X-ray, lab, and treatment — no running across town for answers.", video: media.servicesHeaderVideo, alt: "A clinician working in the on-site lab" },
+                { title: "A fraction of ER cost", text: "Quality treatment for non-emergencies — $150 self-pay and most major insurance accepted.", video: media.aboutBandVideo, alt: "A provider consulting with a patient" },
+                { title: "Care for the whole family", text: "From toddlers to grandparents — gentle, walk-in care for every age.", video: media.pediatricSectionVideo, alt: "A parent and child at a visit" },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Insurance & pricing ──────────────────────────────── */}
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              Insurance & Pricing
+            </p>
+            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              Transparent care. No surprises.
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1.3fr_1fr]">
+            <Reveal>
+              <div className="h-full rounded-2xl border-2 border-navy-900/10 bg-white/70 p-8">
+                <h3 className="font-display text-xl font-bold text-navy-900">
+                  Insurance we accept
+                </h3>
+                <p className="mt-2 text-sm text-ink-soft">
+                  Most major plans accepted — coverage varies by policy. We&apos;ll
+                  verify your benefits before treatment.
+                </p>
+                <ul className="mt-6 flex flex-wrap gap-2.5">
+                  {insurers.map((p) => (
+                    <li
+                      key={p}
+                      className="rounded-lg border border-navy-900/15 bg-ivory px-4 py-2 text-sm font-semibold text-navy-900"
+                    >
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-sm text-ink-soft">
+                  Don&apos;t see your plan?{" "}
+                  <a href={site.phoneHref} className="font-bold text-red hover:underline">
+                    Call us to check: {site.phone}
+                  </a>
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="flex h-full flex-col rounded-2xl bg-navy-950 p-8 text-ivory">
+                <h3 className="font-display text-xl font-bold text-sky">
+                  Self-pay pricing
+                </h3>
+                <p className="mt-2 text-sm text-ivory/70">
+                  No insurance? Quality care stays affordable.
+                </p>
+                <div className="mt-6 space-y-4">
+                  <div className="rounded-xl border border-ivory/15 bg-ivory/5 p-5">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">
+                      New office visit
+                    </p>
+                    <p className="font-display mt-1 text-4xl font-black">$150</p>
+                    <p className="mt-1 text-xs text-ivory/60">Full evaluation & treatment</p>
+                  </div>
+                </div>
+                <p className="mt-auto pt-5 text-[11px] leading-relaxed text-ivory/50">
+                  Additional services like X-ray, labs, or procedures may have
+                  separate fees — always quoted before treatment.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Map / find us ────────────────────────────────────── */}
+      <section className="bg-ivory-soft py-24">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              Find Us
+            </p>
+            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              Right here in Ennis.
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="relative mt-10 overflow-hidden rounded-2xl border-2 border-navy-900/10 shadow-xl">
+              <iframe
+                title="Map to Urgent Care of Ennis — 108 Chamber of Commerce Dr, Ennis, TX 75119"
+                src="https://www.google.com/maps?q=108+Chamber+of+Commerce+Dr+Ennis+TX+75119&output=embed"
+                className="h-115 w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:inset-auto sm:right-6 sm:top-6 sm:w-80 sm:p-0">
+                <div className="pointer-events-auto rounded-2xl bg-navy-950/95 p-6 text-ivory shadow-2xl backdrop-blur">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky">
+                    Urgent Care of Ennis
+                  </p>
+                  <p className="font-display mt-2 text-lg font-bold leading-snug">
+                    {site.address.line1}
+                    <br />
+                    {site.address.line2}
+                  </p>
+                  <p className="mt-2 text-sm text-ivory/70">{site.hours}</p>
+                  <div className="mt-4 grid grid-cols-2 gap-2">
+                    <a
+                      href={site.phoneHref}
+                      className="rounded-lg bg-red px-3 py-2.5 text-center text-xs font-bold text-ivory transition-colors hover:bg-red-deep"
+                    >
+                      Call Now
+                    </a>
+                    <a
+                      href={site.address.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-lg border border-ivory/30 px-3 py-2.5 text-center text-xs font-bold text-ivory transition-colors hover:border-sky hover:text-sky"
+                    >
+                      Directions
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-red">
+              Common Questions
+            </p>
+            <h2 className="font-display mt-3 max-w-2xl text-3xl font-black tracking-tight text-navy-900 sm:text-4xl">
+              Before you visit.
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="mt-10">
+              <Faq />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── CTA band ─────────────────────────────────────────── */}
+      <section className="pb-24 bg-ivory">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl bg-navy-950">
+              <AutoVideo
+                className="absolute inset-0 h-full w-full object-cover"
+                src={media.ctaVideo.mp4}
+                poster={media.ctaVideo.poster}
+              />
+              <div className="absolute inset-0 bg-navy-950/85" />
+              <div className="relative px-8 py-16 text-center text-ivory sm:px-16">
+                <h2 className="font-display text-3xl font-black tracking-tight sm:text-4xl">
+                  Feeling bad? Don&apos;t wait it out.
+                </h2>
+                <p className="mx-auto mt-4 max-w-xl text-ivory/80">
+                  Walk in today — Monday through Saturday, 7 AM to 7 PM.
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-4">
+                  <a
+                    href={site.phoneHref}
+                    className="rounded-xl bg-red px-7 py-3.5 text-sm font-bold text-ivory shadow-lg transition-all hover:bg-red-deep"
+                  >
+                    Call {site.phone}
+                  </a>
+                  <a
+                    href={site.address.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-xl border border-ivory/40 px-7 py-3.5 text-sm font-bold text-ivory transition-colors hover:border-sky hover:text-sky"
+                  >
+                    Get Directions
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
